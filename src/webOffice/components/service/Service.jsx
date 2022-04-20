@@ -5,9 +5,9 @@ function Service() {
     <>
       <section id="services" className="services">
         <div className="container" data-aos="fade-up">
-        <div className="section-title">
+          <div className="section-title">
             <h2>service</h2>
-            <p>service Us</p>
+            <p>service nous</p>
           </div>
           <div className="row gy-5">
             <div
@@ -17,22 +17,19 @@ function Service() {
             >
               <div className="service-item">
                 <div className="img">
-                  <img
-                    src="/img/services-1.jpg"
-                    className="img-fluid"
-                    alt=""
-                  />
+                  <img src="/img/services-1.jpg" className="img-fluid" alt="" />
                 </div>
                 <div className="details position-relative">
                   <div className="icon">
                     <i className="bi bi-activity" />
                   </div>
                   <a href="#" className="stretched-link">
-                    <h3>Nesciunt Mete</h3>
+                    <h3>Faire de chaque interaction plus rapide |</h3>
                   </a>
                   <p>
-                    Provident nihil minus qui consequatur non omnis maiores. Eos
-                    accusantium minus dolores iure perferendis.
+                    Combinez les technologies numériques avancées avec les
+                    meilleures personnes pour offrir une compréhension et une
+                    empathie humaines au moment le plus important.
                   </p>
                 </div>
               </div>
@@ -45,22 +42,21 @@ function Service() {
             >
               <div className="service-item">
                 <div className="img">
-                  <img
-                    src="/img/services-2.jpg"
-                    className="img-fluid"
-                    alt=""
-                  />
+                  <img src="/img/services-2.jpg" className="img-fluid" alt="" />
                 </div>
                 <div className="details position-relative">
                   <div className="icon">
                     <i className="bi bi-broadcast" />
                   </div>
                   <a href="#" className="stretched-link">
-                    <h3>Eosle Commodi</h3>
+                    <h3>Ambassadeurs de la marque ou détracteurs ?</h3>
                   </a>
                   <p>
-                    Ut autem aut autem non a. Sint sint sit facilis nam iusto
-                    sint. Libero corrupti neque eum hic non ut nesciunt dolorem.
+                    Chaque jour, des milliers de personnes à travers le monde
+                    interagissent avec votre marque, invoquant des expériences,
+                    des émotions et des perceptions réelles. Qu'ils soient bons
+                    ou mauvais, ils associent ces souvenirs à votre marque,
+                    influençant les futures décisions d'achat.
                   </p>
                 </div>
               </div>
@@ -73,23 +69,20 @@ function Service() {
             >
               <div className="service-item">
                 <div className="img">
-                  <img
-                    src="/img/services-3.jpg"
-                    className="img-fluid"
-                    alt=""
-                  />
+                  <img src="/img/services-3.jpg" className="img-fluid" alt="" />
                 </div>
                 <div className="details position-relative">
                   <div className="icon">
                     <i className="bi bi-easel" />
                   </div>
                   <a href="#" className="stretched-link">
-                    <h3>Ledo Markt</h3>
+                    <h3>Gérez de vraies affaires impacter</h3>
                   </a>
                   <p>
-                    Ut excepturi voluptatem nisi sed. Quidem fuga consequatur.
-                    Minus ea aut. Vel qui id voluptas adipisci eos earum
-                    corrupti.
+                    Lorsque vos connexions clients sont alimentées par des
+                    services robustes et intégrés numériquement, vous obtenez un
+                    avantage concurrentiel qui produit de vrais résultats. Mais
+                    ne nous croyez pas sur parole.
                   </p>
                 </div>
               </div>
@@ -97,92 +90,30 @@ function Service() {
             {/* End Service Item */}
             <div
               className="col-xl-4 col-md-6"
-              data-aos="zoom-in"
-              data-aos-delay={500}
             >
               <div className="service-item">
                 <div className="img">
-                  <img
-                    src="/img/services-4.jpg"
-                    className="img-fluid"
-                    alt=""
-                  />
+                  <img src="/img/services-4.jpg" className="img-fluid" alt="" />
                 </div>
                 <div className="details position-relative">
                   <div className="icon">
                     <i className="bi bi-bounding-box-circles" />
                   </div>
                   <a href="#" className="stretched-link">
-                    <h3>Asperiores Commodit</h3>
+                    <h3>Protégez votre marque et votre les clients</h3>
                   </a>
                   <p>
-                    Non et temporibus minus omnis sed dolor esse consequatur.
-                    Cupiditate sed error ea fuga sit provident adipisci neque.
+                    Un tweet négatif généré par l'utilisateur ou un commentaire
+                    public abusif peut changer la façon dont les clients
+                    perçoivent votre marque. Préservez la réputation de
+                    l'entreprise et protégez les utilisateurs grâce à une
+                    approche high-tech et tactile complète de la confiance et de
+                    la sécurité en ligne.
                   </p>
                   <a href="#" className="stretched-link" />
                 </div>
               </div>
             </div>
-            {/* End Service Item */}
-            <div
-              className="col-xl-4 col-md-6"
-              data-aos="zoom-in"
-              data-aos-delay={600}
-            >
-              <div className="service-item">
-                <div className="img">
-                  <img
-                    src="/img/services-5.jpg"
-                    className="img-fluid"
-                    alt=""
-                  />
-                </div>
-                <div className="details position-relative">
-                  <div className="icon">
-                    <i className="bi bi-calendar4-week" />
-                  </div>
-                  <a href="#" className="stretched-link">
-                    <h3>Velit Doloremque</h3>
-                  </a>
-                  <p>
-                    Cumque et suscipit saepe. Est maiores autem enim facilis ut
-                    aut ipsam corporis aut. Sed animi at autem alias eius
-                    labore.
-                  </p>
-                  <a href="#" className="stretched-link" />
-                </div>
-              </div>
-            </div>
-            {/* End Service Item */}
-            <div
-              className="col-xl-4 col-md-6"
-              data-aos="zoom-in"
-              data-aos-delay={700}
-            >
-              <div className="service-item">
-                <div className="img">
-                  <img
-                    src="/img/services-6.jpg"
-                    className="img-fluid"
-                    alt=""
-                  />
-                </div>
-                <div className="details position-relative">
-                  <div className="icon">
-                    <i className="bi bi-chat-square-text" />
-                  </div>
-                  <a href="#" className="stretched-link">
-                    <h3>Dolori Architecto</h3>
-                  </a>
-                  <p>
-                    Hic molestias ea quibusdam eos. Fugiat enim doloremque aut
-                    neque non et debitis iure. Corrupti recusandae ducimus enim.
-                  </p>
-                  <a href="#" className="stretched-link" />
-                </div>
-              </div>
-            </div>
-            {/* End Service Item */}
           </div>
         </div>
       </section>

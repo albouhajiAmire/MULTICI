@@ -1,30 +1,20 @@
-import './assets/css/general.css'
-import './assets/css/style.css'
-import Header from './webOffice/components/header/Header';
-import Hero from './webOffice/components/hero/Hero';
-import Footer from './webOffice/components/footer/Footer';
-import Whyus from './webOffice/components/whyUs/Whyus';
-import Testimonials from './webOffice/components/testimonials/Testimonials';
-import Contact from './webOffice/components/contact/Contact';
-import About from './webOffice/components/about/About';
-import Cta from './webOffice/cta/Cta';
-import Service from './webOffice/components/service/Service';
-import Feature from './webOffice/components/features/Feature';
-import Count from './webOffice/components/count/Count';
+import "./assets/css/general.css";
+import "./assets/css/style.css";
+import { Routes, Route } from "react-router-dom";
+import Index from "./webOffice/components";
+import Login from "./auth/Login";
+import FormEmpl from "./webOffice/form/FormEmpl";
+import Register from "./auth/Register";
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
   return (
     <div className="App">
-      <Header/>
-      <Hero/>
-      <About/>
-      <Whyus/>
-      <Cta/>
-      <Feature/>
-      <Count/>
-      <Service/>
-      <Testimonials/>
-      <Contact/>
-      <Footer/>
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/emploi" element={<FormEmpl />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
     </div>
   );
 }

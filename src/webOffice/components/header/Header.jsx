@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 function Header() {
 
@@ -20,30 +21,31 @@ function Header() {
 
   return (
     <>
-      {" "}
       <header id="header" className="fixed-top">
         <div className="container d-flex align-items-center justify-content-between">
           <h1 className="logo">
-            <a href="index.html">Multici</a>
+            <NavLink to={"/"}>
+              <img src="/img/Logo (1).png"  className="img-fluid" alt="logo" />
+            </NavLink>
           </h1>
           {/* Uncomment below if you prefer to use an image logo */}
           {/* <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>*/}
           <nav id="navbar" className="navbar">
             <ul>
               <li>
-                <a className="nav-link scrollto active" href="#hero">
+                <NavLink to={"/"} className="nav-link scrollto active">
                   acuille
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a className="nav-link scrollto" href="#about">
+                <NavLink to={""} className="nav-link scrollto" href="#about">
                   propos
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a className="nav-link scrollto" href="#services">
+                <NavLink to={""} className="nav-link scrollto">
                   Service
-                </a>
+                </NavLink>
               </li>
               <li className="dropdown">
                 <a href="#" onClick={(e) => {
@@ -95,14 +97,20 @@ function Header() {
                 </ul>
               </li>
               <li>
-                <a className="nav-link scrollto" href="#contact">
-                  Contact
-                </a>
+                <NavLink to={"/emploi"} className="nav-link scrollto">
+                  Emploi
+                </NavLink>
               </li>
               <li>
-                <a className="getstarted scrollto" href="#about">
-                  Get Started
-                </a>
+                <NavLink to={"/"} className="nav-link scrollto" >
+                  Contact
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to={"/login"}
+                  className="getstarted scrollto" href="#about">
+                 Se Connecter
+                </NavLink>
               </li>
             </ul>
             <i class="fa-solid fa-bars-staggered mobile-nav-toggle"
@@ -110,7 +118,6 @@ function Header() {
                 toggleMenu(e);
               }}></i>
           </nav>
-          {/* .navbar */}
         </div>
       </header>
     </>

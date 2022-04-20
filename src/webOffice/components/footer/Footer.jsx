@@ -1,6 +1,29 @@
-import React from "react";
-
+import React, { useState } from "react";
+import { toast } from "react-toastify";
+import { Subscribe } from "../../axios/service/subscribe";
 function Footer() {
+  const [formData, setFormData] = useState({
+    email: "",
+  });
+  const { email } = formData;
+  const handleInputChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    //  axios.post("http://localhost:3002/v1/api/subscribe/create", dataToaSubmit)
+    Subscribe(formData)
+      .then(({ data }) => {
+        if (data.err) {
+          toast.error("Oops!! désolé,nous pensons qu'il y a un probléme.");
+        } else {
+          toast.success("Merci de votre bonnement et de votre confiance");
+        }
+      })
+      .catch((err) => {
+        toast.error("Oooh!! il y'a un probléme!!");
+      });
+  };
   return (
     <>
       <footer id="footer">
@@ -9,99 +32,95 @@ function Footer() {
             <div className="row">
               <div className="col-lg-4 col-md-6">
                 <div className="footer-info">
-                  <h3>Multi</h3>
+                  <h3>Multi-c</h3>
                   <p className="pb-3">
                     <em>
-                      Qui repudiandae et eum dolores alias sed ea. Qui suscipit
-                      veniam excepturi quod.
+                      {/* Qui repudiandae et eum dolores alias sed ea. Qui suscipit
+                      veniam excepturi quod. */}
                     </em>
                   </p>
                   <p>
-                    A108 Adam Street <br />
-                    NY 535022, USA
+                    <br />
+                    2 Place Abou Baker Essadik APT8, Agdal.
                     <br />
                     <br />
-                    <strong>Phone:</strong> +1 5589 55488 55
+                    <strong>Phone:</strong> +212 537 682 496
                     <br />
-                    <strong>Email:</strong> info@example.com
+                    <strong>Email:</strong> rekrute.multic@gmail.com
                     <br />
                   </p>
                   <div className="social-links mt-3">
-                    <a href="#" className="twitter">
-                      <i className="bx bxl-twitter" />
-                    </a>
                     <a href="#" className="facebook">
-                      <i className="bx bxl-facebook" />
+                      <i className="fa-brands fa-facebook-f"></i>
                     </a>
                     <a href="#" className="instagram">
-                      <i className="bx bxl-instagram" />
-                    </a>
-                    <a href="#" className="google-plus">
-                      <i className="bx bxl-skype" />
+                      <i className="fa-brands fa-instagram"></i>
                     </a>
                     <a href="#" className="linkedin">
-                      <i className="bx bxl-linkedin" />
+                      <i className="fa-brands fa-linkedin"></i>
                     </a>
                   </div>
                 </div>
               </div>
               <div className="col-lg-2 col-md-6 footer-links">
-                <h4>Useful Links</h4>
+                <h4>Liens utiles</h4>
                 <ul>
                   <li>
-                    <i className="bx bx-chevron-right" /> <a href="#">Home</a>
+                    <i className="bx bx-chevron-right" />{" "}
+                    <a href="#">Acuille</a>
                   </li>
                   <li>
                     <i className="bx bx-chevron-right" />{" "}
-                    <a href="#">About us</a>
+                    <a href="#">A propos</a>
                   </li>
                   <li>
                     <i className="bx bx-chevron-right" />{" "}
-                    <a href="#">Services</a>
+                    <a href="#">Service</a>
                   </li>
                   <li>
                     <i className="bx bx-chevron-right" />{" "}
-                    <a href="#">Terms of service</a>
-                  </li>
-                  <li>
-                    <i className="bx bx-chevron-right" />{" "}
-                    <a href="#">Privacy policy</a>
+                    <a href="#">Contacter</a>
                   </li>
                 </ul>
               </div>
               <div className="col-lg-2 col-md-6 footer-links">
-                <h4>Our Services</h4>
+                <h4>Nos services</h4>
                 <ul>
                   <li>
                     <i className="bx bx-chevron-right" />{" "}
-                    <a href="#">Web Design</a>
+                    <a href>Création de sites web</a>
                   </li>
                   <li>
                     <i className="bx bx-chevron-right" />{" "}
-                    <a href="#">Web Development</a>
+                    <a href>Développement web</a>
                   </li>
                   <li>
                     <i className="bx bx-chevron-right" />{" "}
-                    <a href="#">Product Management</a>
+                    <a href>Gestion des produits</a>
                   </li>
                   <li>
                     <i className="bx bx-chevron-right" />{" "}
-                    <a href="#">Marketing</a>
+                    <a href>Commercialisation</a>
                   </li>
                   <li>
                     <i className="bx bx-chevron-right" />{" "}
-                    <a href="#">Graphic Design</a>
+                    <a href>Conseillers Client</a>
                   </li>
                 </ul>
               </div>
               <div className="col-lg-4 col-md-6 footer-newsletter">
-                <h4>Our Newsletter</h4>
+                <h4>Rejoignez notre alliances it</h4>
                 <p>
-                  Tamen quem nulla quae legam multos aute sint culpa legam
-                  noster magna
+                  Bienvenue, votre participation est importante pour nous,
+                  merci!
                 </p>
-                <form action method="post">
-                  <input type="email" name="email" />
+                <form onSubmit={handleSubscribe}>
+                  <input
+                    type="email"
+                    name="email"
+                    value={email}
+                    onChange={(e) => handleInputChange(e)}
+                  />
                   <input type="submit" defaultValue="Subscribe" />
                 </form>
               </div>
@@ -110,17 +129,23 @@ function Footer() {
         </div>
         <div className="container">
           <div className="copyright">
-            © Copyright
-            <strong>
-              <span>Multi-ci</span>
-            </strong>
-            . All Rights Reserved
+            © droits d'auteur
+            <strong>Multi-ci</strong>. Tous les droits sont réservés
           </div>
           <div className="credits">
-            Designed by <a href="https://bootstrapmade.com/">amine karim</a>
+            Développeurs by{" "}
+            <a href="http://wa.me/+212 688727657" target="_blank">
+              amine albouhaji && karim Manssour
+            </a>
           </div>
         </div>
       </footer>
+      <a
+        href="#"
+        className="back-to-top d-flex align-items-center justify-content-center active"
+      >
+        <i className="fa-solid fa-arrow-up"></i>
+      </a>
     </>
   );
 }
