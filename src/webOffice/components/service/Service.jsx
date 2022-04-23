@@ -5,10 +5,10 @@ function Service() {
     <>
       <section id="services" className="services">
         <div className="container" data-aos="fade-up">
-          <div className="section-title">
+          {/* <div className="section-title">
             <h2>service</h2>
             <p>service nous</p>
-          </div>
+          </div> */}
           <div className="row gy-5">
             <div
               className="col-xl-4 col-md-6"
@@ -24,7 +24,7 @@ function Service() {
                     <i className="bi bi-activity" />
                   </div>
                   <a href="#" className="stretched-link">
-                    <h3>Faire de chaque interaction plus rapide |</h3>
+                    <h3>Faire de chaque interaction plus rapide</h3>
                   </a>
                   <p>
                     Combinez les technologies numériques avancées avec les

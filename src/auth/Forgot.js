@@ -1,8 +1,99 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import "./login.css";
-function Login() {
+import { Auth, isAuthentication } from "../webOffice/redux/actions/auth";
+import { ForgotAuth } from "../webOffice/axios/service/auth";
+
+const Forgot = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const { isAuth } = useSelector((state) => state.auth);
+  const { errorMsg } = useSelector((state) => state.message);
+  const { loading } = useSelector((state) => state.loading);
+
+  useEffect(() => {
+    dispatch(isAuthentication());
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (isAuth) {
+      navigate("/");
+    }
+  }, [isAuth]);
+
+ 
+
+  const [email, setEmail] = useState ('');
+
+  const [emailError, setIEmailError] = useState("");
+  const [stuff, setStuff] = useState({
+    errorMessage: "",
+    successMessage: "",
+    loader: false,
+  });
+
+  const handleLoginData = (e) => {
+    setEmail( e.target.value );    
+      if (e.target.value.length <= 5) {
+        setIEmailError("e-mail obligatoire!");
+      } else if (!e.target.value.includes("@")) {
+        setIEmailError(
+          "vous devez entrer votre email correct!!");
+      } else {
+        setIEmailError("");
+      }
+  };
+
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
+    setStuff({ ...stuff, loader: true });
+
+      if (emailError !== "") {
+        alert("still error");
+        return;
+      }
+      ForgotAuth({email})
+      .then(({ data }) => {
+        if (!data.err) {
+          setStuff({
+            loader: false,
+            successMessage: "validate",
+            errorMessage: "",
+          });
+          setEmail("");
+        } else {
+          const msg = typeof data.msg === "string" ? data.msg : data.msg[0];
+          setStuff({
+            loader: false,
+            successMessage: "",
+            errorMessage: msg,
+          });
+        }
+      })
+      .catch((err) => {
+        setStuff({
+          loader: false,
+          successMessage: "",
+          errorMessage: "error",
+        });
+      });
+   
+  };
+
+  useEffect(() => {
+    if (stuff.successMessage === "validate") {
+      alert("succes");
+      setStuff({
+        ...stuff,
+        successMessage: "",
+      });
+    }
+  }, [stuff.successMessage]);
+
   return (
+
     <>
       <div className="login-root">
         <div
@@ -115,24 +206,46 @@ function Login() {
                   <span className="padding-bottom--15 spanlogin">
                     Connectez-vous à votre compte
                   </span>
-                  <form id="stripe-login">
+                
+                  {stuff.loader && (
+                    <div className="loading">
+                      <div className="ring">
+                        Chargement...
+                        <span className="spn"></span>
+                      </div>
+                    </div>
+                  )}
+                  {stuff.errorMessage && (
+                    <div className="error-msg">{stuff.errorMessage}</div>
+                  )}
+                  {stuff.successMessage && (
+                    <div className="succes">{stuff.successMessage}</div>
+                  )}
+                  <form
+                    id="stripe-login"
+                    onSubmit={(e) => {
+                      handleOnSubmit(e);
+                    }}
+                  >
                     <div className="field padding-bottom--24">
                       <label className="labellogin" htmlFor="email">
                         E-mail
                       </label>
-                      <input type="email" name="email" />
+                      <input
+                        type="email"
+                        name="email"
+                        value={email}
+                        onChange={(e) => {
+                          handleLoginData(e);
+                        }}
+                      />
+                      {emailError !== "" && (
+                        <small style={{ color: "tomato" }}>
+                          {emailError}
+                        </small>
+                      )}
                     </div>
-                    <div className="field padding-bottom--24">
-                      <div className="grid--50-50">
-                        <label className="labellogin" htmlFor="password">
-                          Mot de passe
-                        </label>
-                        <div className="reset-pass">
-                          <NavLink to={""}>Mot de passe oublié?</NavLink>
-                        </div>
-                      </div>
-                      <input type="password" name="password" />
-                    </div>
+
                     <div className="field field-checkbox padding-bottom--24 flex-flex align-center">
                       <label className="labellogin" htmlFor="checkbox">
                         <input type="checkbox" name="checkbox" /> Restez
@@ -148,7 +261,7 @@ function Login() {
                     </div>
                     <div className="field">
                       <NavLink to={"/"} className="ssolink" href="#">
-                      Accuille page 
+                        Accuille page
                       </NavLink>
                     </div>
                   </form>
@@ -156,7 +269,8 @@ function Login() {
               </div>
               <div className="footer-link padding-top--24">
                 <span>
-                Vous n'avez pas de compte ?<NavLink to={"/register"}>S'inscrire</NavLink>
+                  Vous n'avez pas de compte ?
+                  <NavLink to={"/register"}>S'inscrire</NavLink>
                 </span>
                 <div className="listing padding-top--24 padding-bottom--24 flex-flex center-center">
                   <span>
@@ -176,6 +290,6 @@ function Login() {
       </div>
     </>
   );
-}
+};
 
-export default Login;
+export default Forgot;

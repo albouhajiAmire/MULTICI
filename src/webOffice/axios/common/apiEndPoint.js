@@ -34,5 +34,26 @@ const ApiEndpoints = {
     signup: `/signup`,
     confirmEmail: `/confirm-email`,
   },
+
+  ChatEndpoints: {
+    route: `${Host.PREFIX}/chat`,
+    list: `/list`,
+    create: `/create`,
+    view: `/view`,
+    count: `/count`,
+  },
+
+  MessageEndpoints: {
+    route: `${Host.PREFIX}/message`,
+    list: `/list`,
+    create: `/create`,
+  },
+
+  FileEndpoints: {
+    route: `${Host.PREFIX}/file`,
+    getSingleImageView: `/get-single-image/:id/view`,
+    getSingleImageDownload: `/get-single-image/:id/download`,
+    createSingleImage: `/create-single-image`,
+  },
 };
 export { ApiEndpoints, Host };

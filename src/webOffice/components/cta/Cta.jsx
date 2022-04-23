@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 function Cta() {
   return (
@@ -7,9 +7,20 @@ function Cta() {
         <div className="container" data-aos="zoom-out">
           <div className="row g-5">
             <div className="col-lg-8 col-md-6 content d-flex flex-column justify-content-center order-last order-md-first">
-              <h3>Alias sunt quas <em>Cupiditate</em> oluptas hic minima</h3>
-              <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <a className="cta-btn align-self-start" href="tel:+212 688727657" target="_blank">Appel à l'action</a>
+              <h3>
+                <em>Êtes-vous intéressé,</em> n'hésitez pas à nous contacter
+              </h3>
+              <p>
+                Les médias souhaitant s'engager avec MULTI-CI sont encouragés à
+                contacter :
+              </p>
+              <a
+                className="cta-btn align-self-start"
+                href="tel:+212 688727657"
+                target="_blank"
+              >
+                Appel à l'action
+              </a>
             </div>
             <div className="col-lg-4 col-md-6 order-first order-md-last d-flex align-items-center">
               <div className="img">
@@ -20,7 +31,7 @@ function Cta() {
         </div>
       </section>
     </>
-  )
+  );
 }
 
-export default Cta
+export default Cta;

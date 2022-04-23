@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../../../assets/css/styleMessage.css"
 import { create } from "../../axios/service/contact";
 function Contact() {
   const [inputError, setInputError] = useState({
@@ -138,6 +139,20 @@ function Contact() {
                 className="react-email-form"
               >
                 <div className="row">
+                {stuff.loader && (
+                    <div className="loading">
+                      <div className="ring">
+                        Chargement...
+                        <span className="spn"></span>
+                      </div>
+                    </div>
+                  )}
+                  {stuff.errorMessage && (
+                    <div className="error-msg">{stuff.errorMessage}</div>
+                  )}
+                  {stuff.successMessage && (
+                    <div className="succes">{stuff.successMessage}</div>
+                  )}
                   <div className="col-md-6 form-group">
                     <input
                       type="text"

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 import { Subscribe } from "../../axios/service/subscribe";
+import ChatBox from "../chat/chatBox";
 function Footer() {
   const [formData, setFormData] = useState({
     email: "",
@@ -140,6 +141,7 @@ function Footer() {
           </div>
         </div>
       </footer>
+      {/* <ChatBox/> */}
       <a
         href="#"
         className="back-to-top d-flex align-items-center justify-content-center active"

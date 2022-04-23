@@ -38,13 +38,8 @@ function Header() {
                 </NavLink>
               </li>
               <li>
-                <NavLink to={""} className="nav-link scrollto" href="#about">
-                  propos
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to={""} className="nav-link scrollto">
-                  Service
+                <NavLink to={"/comment-nous-aidons"} className="nav-link scrollto">
+                comment-nous-aidons
                 </NavLink>
               </li>
               <li className="dropdown">
@@ -54,9 +49,6 @@ function Header() {
                   <span>Societe</span> <i className="bi bi-chevron-down" />
                 </a>
                 <ul>
-                  <li>
-                    <a href="#">notre mission</a>
-                  </li>
                   <li className="dropdown">
                     <a href="#" onClick={(e) => {
                       handleDropDown(e);
@@ -64,25 +56,14 @@ function Header() {
                       <span>Sécurité du centre d'appels et gestion des risques</span>{" "}
                       <i className="bi bi-chevron-right" />
                     </a>
-                    <ul>
-                      <li>
-                        <a href="#">responsabilité sociale des entreprises</a>
-                      </li>
-                      <li>
-                        <a href="#">emplacement</a>
-                      </li>
-                      <li>
-                        <a href="#">Deep Drop Down 3</a>
-                      </li>
-                      <li>
-                        <a href="#">Deep Drop Down 4</a>
-                      </li>
-                      <li>
-                        <a href="#">Deep Drop Down 5</a>
-                      </li>
-                    </ul>
                   </li>
                   <li>
+                    <NavLink to={"/proposnous"}>à propos de nous</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to={"/durabilite"}>durabilité</NavLink>
+                  </li>
+                  {/* <li>
                     <a href="#">nos valeurs</a>
                   </li>
                   <li>
@@ -93,7 +74,7 @@ function Header() {
                   </li>
                   <li>
                     <a href="#">témoignages-clients</a>
-                  </li>
+                  </li> */}
                 </ul>
               </li>
               <li>

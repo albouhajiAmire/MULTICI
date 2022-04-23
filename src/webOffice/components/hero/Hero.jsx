@@ -63,7 +63,7 @@ function Hero() {
                         href="#about"
                         className="btn-get-started animate__animated animate__fadeInUp scrollto"
                       >
-                        Read More
+                        Lire La Suite
                       </a>
                     </div>
                   </div>

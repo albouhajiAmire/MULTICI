@@ -21,6 +21,22 @@ const LoginAuth = async (data) => {
     config
   );
 };
+
+const Confirmemail = async (id) => {
+  return await axios.put(
+    `${Host.BACKEND}${ApiEndpoints.UserEndpoints.route}${ApiEndpoints.UserEndpoints.confirmEmail}/${id}`,
+    { headers: { ...config.headers } }
+  );
+};
+
+const ForgotAuth = async (data) => {
+  return await axios.put(
+    `${Host.BACKEND}${ApiEndpoints.AuthEndpoints.route}${ApiEndpoints.AuthEndpoints.forgot}`,
+    data,
+    config
+  );
+};
+
 const CvAuth = async (data) => {
   return await axios.post(
     `${Host.BACKEND}${ApiEndpoints.cvUserEndpoints.route}${ApiEndpoints.cvUserEndpoints.createCv}`,
@@ -28,5 +44,11 @@ const CvAuth = async (data) => {
     config
   );
 };
+const Me = async (token) => {
+  return await axios.get(
+    `${Host.BACKEND}${ApiEndpoints.UserEndpoints.route}${ApiEndpoints.UserEndpoints.me}`,
+    { headers: { ...config.headers, ...token } }
+  );
+};
 
-export { LoginAuth, SignupAuth , CvAuth };
+export { LoginAuth, SignupAuth, CvAuth, Confirmemail, Me,ForgotAuth };
