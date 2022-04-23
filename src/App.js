@@ -25,7 +25,8 @@ import Forgot from "./auth/Forgot";
 const Chats = lazy(() => import("./webOffice/components/chat/chats"));
 
 function App() {
-  const socket = io("http://localhost:3001");
+  // const socket = io("http://localhost:3001");
+  const socket = {}
   return (
     <Provider store={store}>
       <PersistGate persistor={persist}>

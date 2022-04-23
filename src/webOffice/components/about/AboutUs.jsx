@@ -8,7 +8,7 @@ function AboutUs() {
           <div className="row content">
             <div className="col-lg-6">
               <p>
-                  <img src="/img/map-monde.png" alt="" srcset="" />
+                  <img src="/img/map-monde.png" alt="" srcSet=""/>
               </p>
             </div>
             <div className="col-lg-6 pt-4 pt-lg-0">

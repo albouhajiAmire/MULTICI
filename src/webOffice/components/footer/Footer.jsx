@@ -51,13 +51,13 @@ function Footer() {
                     <br />
                   </p>
                   <div className="social-links mt-3">
-                    <a href="#" className="facebook">
+                    <a href="#text" className="facebook">
                       <i className="fa-brands fa-facebook-f"></i>
                     </a>
-                    <a href="#" className="instagram">
+                    <a href="#text" className="instagram">
                       <i className="fa-brands fa-instagram"></i>
                     </a>
-                    <a href="#" className="linkedin">
+                    <a href="#text" className="linkedin">
                       <i className="fa-brands fa-linkedin"></i>
                     </a>
                   </div>
@@ -68,19 +68,19 @@ function Footer() {
                 <ul>
                   <li>
                     <i className="bx bx-chevron-right" />{" "}
-                    <a href="#">Acuille</a>
+                    <a href="text">Acuille</a>
                   </li>
                   <li>
                     <i className="bx bx-chevron-right" />{" "}
-                    <a href="#">A propos</a>
+                    <a href="#text">A propos</a>
                   </li>
                   <li>
                     <i className="bx bx-chevron-right" />{" "}
-                    <a href="#">Service</a>
+                    <a href="#text">Service</a>
                   </li>
                   <li>
                     <i className="bx bx-chevron-right" />{" "}
-                    <a href="#">Contacter</a>
+                    <a href="#text">Contacter</a>
                   </li>
                 </ul>
               </div>
@@ -89,23 +89,23 @@ function Footer() {
                 <ul>
                   <li>
                     <i className="bx bx-chevron-right" />{" "}
-                    <a href>Création de sites web</a>
+                    <a href="#text">Création de sites web</a>
                   </li>
                   <li>
                     <i className="bx bx-chevron-right" />{" "}
-                    <a href>Développement web</a>
+                    <a href="#text">Développement web</a>
                   </li>
                   <li>
                     <i className="bx bx-chevron-right" />{" "}
-                    <a href>Gestion des produits</a>
+                    <a href="#text">Gestion des produits</a>
                   </li>
                   <li>
                     <i className="bx bx-chevron-right" />{" "}
-                    <a href>Commercialisation</a>
+                    <a href="#text">Commercialisation</a>
                   </li>
                   <li>
                     <i className="bx bx-chevron-right" />{" "}
-                    <a href>Conseillers Client</a>
+                    <a href="#text">Conseillers Client</a>
                   </li>
                 </ul>
               </div>
@@ -141,9 +141,9 @@ function Footer() {
           </div>
         </div>
       </footer>
-      {/* <ChatBox/> */}
+  
       <a
-        href="#"
+        href="#hero"
         className="back-to-top d-flex align-items-center justify-content-center active"
       >
         <i className="fa-solid fa-arrow-up"></i>

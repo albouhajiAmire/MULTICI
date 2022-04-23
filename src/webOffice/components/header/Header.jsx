@@ -5,16 +5,16 @@ function Header() {
 
   const toggleMenu = (e) => {
     const navbar = e.target.parentElement;
-    navbar.classList.toggle("navbar-mobile");
-    e.target.classList.toggle("fa-bars-staggered");
-    e.target.classList.toggle("fa-xmark");
+    navbar.classNameList.toggle("navbar-mobile");
+    e.target.classNameList.toggle("fa-bars-staggered");
+    e.target.classNameList.toggle("fa-xmark");
   };
   const handleDropDown = (e) => {
     if (e.target.tagName === "A") {
-      e.target.nextElementSibling.classList.toggle("dropdown-active");
+      e.target.nextElementSibling.classNameList.toggle("dropdown-active");
       return;
     }
-    e.target.parentElement.nextElementSibling.classList.toggle(
+    e.target.parentElement.nextElementSibling.classNameList.toggle(
       "dropdown-active"
     );
   };
@@ -29,7 +29,7 @@ function Header() {
             </NavLink>
           </h1>
           {/* Uncomment below if you prefer to use an image logo */}
-          {/* <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>*/}
+          {/* <a href="index.html" className="logo"><img src="assets/img/logo.png" alt="" className="img-fluid"></a>*/}
           <nav id="navbar" className="navbar">
             <ul>
               <li>
@@ -94,7 +94,7 @@ function Header() {
                 </NavLink>
               </li>
             </ul>
-            <i class="fa-solid fa-bars-staggered mobile-nav-toggle"
+            <i className="fa-solid fa-bars-staggered mobile-nav-toggle"
               onClick={(e) => {
                 toggleMenu(e);
               }}></i>

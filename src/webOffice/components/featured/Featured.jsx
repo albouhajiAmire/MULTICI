@@ -22,7 +22,7 @@ function Featured() {
                   <img
                     src="/img/2-world-short.gif"
                     alt=""
-                    srcset=""
+                    srcSet=""
                     style={{ width: "70%", textAlign: "center" }}
                   />{" "}
                   <h4 className="title">
@@ -39,7 +39,7 @@ function Featured() {
                   <img
                     src="/img/7-associates-short.gif"
                     alt=""
-                    srcset=""
+                    srcSet=""
                     style={{ width: "70%" }}
                   />{" "}
                 </div>
@@ -55,7 +55,7 @@ function Featured() {
                   <img
                     src="/img/3-home-short.gif"
                     alt=""
-                    srcset=""
+                    srcSet=""
                     style={{ width: "70%" }}
                   />
                 </div>
@@ -71,7 +71,7 @@ function Featured() {
                   <img
                     src="/img/6-customer-short.gif"
                     alt=""
-                    srcset=""
+                    srcSet=""
                     style={{ width: "70%" }}
                   />
                 </div>

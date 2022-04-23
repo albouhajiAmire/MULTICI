@@ -14,13 +14,14 @@ import Whyus from "../../components/whyUs/Whyus";
 import TopHeader from "../../components/tobHeader/TopHeader";
 import Featured from "../../components/featured/Featured";
 import MinHero from "../../components/hero/MinHero";
-import Sustainability from "../../components/testimonials/Sustainability";
+import Carousel from "../carousel";
 function Home() {
   return (
     <>
       <TopHeader />
       <Header />
       <Hero />
+      <Carousel/>
       <AboutUs />
       <WhatService />
       <Whyus />

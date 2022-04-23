@@ -234,7 +234,6 @@ function Contact() {
                     name="comment"
                     rows={5}
                     placeholder="Message"
-                    defaultValue={""}
                     value={comment}
                     onChange={(e) => handleInputChange(e)}
                   />

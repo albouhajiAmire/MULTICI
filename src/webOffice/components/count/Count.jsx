@@ -30,7 +30,7 @@ function Count() {
                   <div className="col-md-6 d-md-flex align-items-md-stretch">
                     <div className="count-box">
                       {/* <i class="fa-solid fa-chess-pawn"></i> */}
-                      <img src="/img/bien-etre-hover_1.png" alt="" srcset="" />
+                      <img src="/img/bien-etre-hover_1.png" alt="" srcSet="" />
                       <span
                         className="purecounter"
                       >
@@ -45,7 +45,7 @@ function Count() {
                   <div className="col-md-6 d-md-flex align-items-md-stretch">
                     <div className="count-box">
                       {/* <i class="fa-solid fa-handshake"></i> */}
-                      <img src="/img/respect_1.png" alt="" srcset="" />
+                      <img src="/img/respect_1.png" alt="" srcSet="" />
                       <span
                         className="purecounter"
                       >
@@ -60,7 +60,7 @@ function Count() {
                   <div className="col-md-6 d-md-flex align-items-md-stretch">
                     <div className="count-box">
                       {/* <i className="fa fa-users" aria-hidden="true"></i> */}
-                      <img src="/img/avantages_0.png" alt="" srcset="" />
+                      <img src="/img/avantages_0.png" alt="" srcSet="" />
                       <span
                         data-purecounter-start="0"
                         data-purecounter-end="85"
@@ -78,7 +78,7 @@ function Count() {
                   <div className="col-md-6 d-md-flex align-items-md-stretch">
                     <div className="count-box">
                       {/* <i className="fa fa-user" aria-hidden="true"></i> */}
-                      <img src="/img/entraide-hover_0.png" alt="" srcset="" />
+                      <img src="/img/entraide-hover_0.png" alt="" srcSet="" />
                       <span
                         data-purecounter-start="0"
                         data-purecounter-end="18"
@@ -96,7 +96,7 @@ function Count() {
                   <div className="col-md-6 d-md-flex align-items-md-stretch">
                     <div className="count-box">
                       {/* <i className="fa fa-thumbs-up" aria-hidden="true"></i> */}
-                      <img src="/img/fun-hover_1.png" alt="" srcset="" />
+                      <img src="/img/fun-hover_1.png" alt="" srcSet="" />
                       <span
                         data-purecounter-start="0"
                         data-purecounter-end="15"
