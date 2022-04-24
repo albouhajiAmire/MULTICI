@@ -3,8 +3,8 @@ import ChatsList from "./chatsList";
 import Chat from "./chat";
 import "./chat.css";
 import { useNavigate, useParams } from "react-router";
-import { useDispatch, useSelector } from "react-redux"
-import { isAuthentication } from "../../redux/actions/auth"
+import { useDispatch, useSelector } from "react-redux";
+import { isAuthentication } from "../../redux/actions/auth";
 import { connect, getOnlineFriends, joinAdminRoom } from "../../sockets/init";
 import { get_chats_Count_nav, get_notifi_chats } from "../../redux/actions/chat"
 

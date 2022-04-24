@@ -3,6 +3,8 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import "./login.css";
 import { Auth, isAuthentication } from "../webOffice/redux/actions/auth";
+import { toast } from "react-toastify";
+import { CLEAR_MESSAGE } from "../webOffice/redux/constans/message";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -18,9 +20,16 @@ const Login = () => {
 
   useEffect(() => {
     if (isAuth) {
-      navigate("/");
+      navigate("/emploi");
     }
   }, [isAuth]);
+
+  useEffect(() => {
+    if (errorMsg !== "") {
+      toast.error(errorMsg)
+      dispatch({ type: CLEAR_MESSAGE });
+    }
+  }, [errorMsg]);
 
  
 
@@ -64,7 +73,6 @@ const Login = () => {
         return;
       }
     }
-
     dispatch(Auth(formData));
   };
 
@@ -183,9 +191,12 @@ const Login = () => {
                   <span className="padding-bottom--15 spanlogin">
                     Connectez-vous à votre compte
                   </span>
+                  {loading && <strong>loading...</strong>}
                   <div className="">
-                  {errorMsg !== "" && <p>{errorMsg}</p>}
-                  {loading && <p>loading...</p>}
+                  {errorMsg !== "" && <div className="err">{errorMsg}</div> }   
+                  {loading && (
+              <div class="clock-loader"></div>
+                )}
                   </div>
                  
                   <form

@@ -12,7 +12,7 @@ import Sustainabilitypage from "./webOffice/pages/pagesustainability/Sustainabil
 import Help from "./webOffice/components/help/Help";
 import Confirm from "./webOffice/pages/confirmepage/Confirm";
 import NotFound from "./webOffice/pages/404/NotFound";
-
+import './assets/css/loader.css';
 import { lazy, Suspense } from "react";
 import { Provider } from "react-redux";
 import IndexPage from "./webOffice/components/indexPage";
@@ -20,6 +20,7 @@ import store, { persist } from "./webOffice/redux/store";
 import { PersistGate } from "redux-persist/integration/react";
 import { io } from "socket.io-client";
 import Forgot from "./auth/Forgot";
+import Profil from "./webOffice/pages/profil/Profil";
 
 
 const Chats = lazy(() => import("./webOffice/components/chat/chats"));
@@ -41,6 +42,7 @@ function App() {
             <Route path="/comment-nous-aidons" element={<Help />} />
             <Route path="/confirmer/:id" element={<Confirm />} />
             <Route path="/404-not-found" element={<NotFound />} />
+            <Route path="/profile" element={<Profil />} />
             <Route path="/*" element={<NotFound />} />
             <Route path="/forgot" element={<Forgot />} />
             <Route

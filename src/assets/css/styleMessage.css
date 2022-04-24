@@ -90,3 +90,17 @@
     transform: rotate(405deg);
   }
 }
+
+.err{
+  color: red;
+}
+.succesform{
+  color: green;
+  text-align: center;
+  margin-top: 16px;
+}
+.errorform{
+  color: red;
+  text-align: center;
+  margin-top: 16px;
+}

@@ -5,7 +5,6 @@ import "./login.css";
 import { toast } from "react-toastify";
 toast.configure();
 function Register() {
-
   const [inputError, setInputError] = useState({
     firstname: "",
     lastname: "",
@@ -75,7 +74,7 @@ function Register() {
 
     for (const input in inputError) {
       if (inputError[input] !== "") {
-        alert("stil err");
+        toast.error('error');
         return;
       }
     }
@@ -101,19 +100,21 @@ function Register() {
             successMessage: "",
             errorMessage: msg,
           });
+          toast.error(msg);
         }
       })
       .catch((err) => {
         setStuff({
           loader: false,
           successMessage: "",
-          errorMessage: "error",
+          errorMessage: "someting went wrong,please try again",
         });
+        toast.error('someting went wrong,please try again');
       });
   };
   useEffect(() => {
     if (stuff.successMessage === "validate") {
-      alert("succes");
+      toast.success('message succes');
       setStuff({
         ...stuff,
         successMessage: "",
@@ -229,6 +230,18 @@ function Register() {
             </div>
             <div className="formbg-outer">
               <div className="formbg">
+                {stuff.loader && (
+                  <div className="box">
+                    <div className="container">
+                      <span className="circle"></span>
+                      <span className="circle"></span>
+                      <span className="circle"></span>
+                      <span className="circle"></span>
+                    </div>
+                  </div>
+                )}
+                {stuff.errorMessage && <div className="errorform">{stuff.errorMessage}</div>}
+                {stuff.successMessage && <div className="succesform">{stuff.successMessage}</div>}
                 <div className="formbg-inner padding-horizontal--48">
                   <span className="padding-bottom--15 spanlogin">
                     Connectez-vous à votre compte
@@ -246,7 +259,7 @@ function Register() {
                           onChange={(evt) => handleInputChange(evt)}
                         />
                         {inputError.firstname !== "" && (
-                          <div>{inputError.firstname}</div>
+                          <div className="err">{inputError.firstname}</div>
                         )}
                       </div>
                       <div className="field padding-bottom--24 col-md-6">
@@ -260,7 +273,7 @@ function Register() {
                           onChange={(evt) => handleInputChange(evt)}
                         />
                         {inputError.lastname !== "" && (
-                          <div>{inputError.lastname}</div>
+                          <div  className="err">{inputError.lastname}</div>
                         )}
                       </div>
                     </div>
@@ -274,7 +287,7 @@ function Register() {
                         value={email}
                         onChange={(evt) => handleInputChange(evt)}
                       />
-                      {inputError.email !== "" && <div>{inputError.email}</div>}
+                      {inputError.email !== "" && <div  className="err">{inputError.email}</div>}
                     </div>
                     <div className="field padding-bottom--24">
                       <div className="grid--50-50">
@@ -292,7 +305,7 @@ function Register() {
                         onChange={(evt) => handleInputChange(evt)}
                       />
                       {inputError.password !== "" && (
-                        <div>{inputError.password}</div>
+                        <div  className="err">{inputError.password}</div>
                       )}
                     </div>
                     <div className="field padding-bottom--24">
@@ -306,7 +319,7 @@ function Register() {
                         onChange={(evt) => handleInputChange(evt)}
                       />
                       {inputError.confirmpassword !== "" && (
-                        <div>{inputError.confirmpassword}</div>
+                        <div  className="err">{inputError.confirmpassword}</div>
                       )}
                     </div>
 

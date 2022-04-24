@@ -1,9 +1,10 @@
 
 import React, { useState } from "react";
-import { toast} from 'react-toastify'
+import { toast} from 'react-toastify';
 import "../../auth/login.css";
 import { CvAuth } from "../axios/service/auth";
 import Header from "../components/header/Header";
+
 function FormEmpl() {
   const [formData, setFormData] = useState({
     type: "",
@@ -22,7 +23,7 @@ function FormEmpl() {
   const validate = (evt) => {
     evt.preventDefault();
     const data = new FormData();
-
+    
     for(let i = 0; i < cvId.length; i++) {
        data.append('file', cvId[i]);
     }
@@ -30,7 +31,7 @@ function FormEmpl() {
     CvAuth(formData)
       .then(({ data }) => {
         if (data.err) {
-          toast.success('Télécharger no succès');
+          toast.error('Télécharger no succès');
         } else {
           toast.success('Télécharger le succès');
         }
@@ -48,6 +49,7 @@ function FormEmpl() {
     //   data = {...formData,certificate, certificateName}
     // }
   };
+ 
   return (
     <>
       <Header />
@@ -71,10 +73,8 @@ function FormEmpl() {
                     onChange={(evt) => handleInputChange(evt)}
                   >
                     <option selected></option>
-                    <option value="none">sans deplome </option>
-                    <option value="info">informatique</option>
-                    <option value="vvvvv">vvvvv</option>
-                    <option value="cccc"> cccccc</option>
+                    <option value="none">sans déplome </option>
+                    <option value="info">déplomer</option>
                   </select>
                 </div>
                 <div className="field padding-bottom--24">

@@ -26,7 +26,8 @@ const Auth = (formData) => async dispatch => {
 
     }).catch(err => {
         console.log("get orders api err ", err);
-        dispatch({ type: STOP_LOADING })
+        dispatch({ type: STOP_LOADING });
+        dispatch({ type: SHOW_ERROR_MESSAGE, payload : "xxxxxxrrrr" })
     })
 }
 
@@ -68,9 +69,7 @@ const Logout = (next = () => {}) => async dispatch => {
     dispatch({ type: START_LOADING })
     dispatch({type: LOGOUT })
     dispatch({ type: STOP_LOADING })
-
-
-      next() ;
+    next() ;
 
 }
 
