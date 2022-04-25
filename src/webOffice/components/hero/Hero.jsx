@@ -1,40 +1,10 @@
 import React from "react";
-import Slider from "react-slick";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 function Hero() {
-  const NextArrow = ({ onClick }) => {
-    return (
-      <div className="arrow next" onClick={onClick}>
-        <FaArrowRight />
-      </div>
-    );
-  };
-
-  const PrevArrow = ({ onClick }) => {
-    return (
-      <div className="arrow prev" onClick={onClick}>
-        <FaArrowLeft />
-      </div>
-    );
-  };
-  const settings = {
-    infinite: true,
-    lazyLoad: true,
-    dots: true,
-    speed: 300,
-    slidesToShow: 1,
-    centerMode: true,
-    centerPadding: 0,
-    autoplay: true,
-    autoplatSpeed: 1600,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
-  };
 
   return (
     <>
-       <Slider {...settings}>
+       
         <div className="slide activeSlide swiper-slide">
           <section id="hero">
             <div
@@ -74,7 +44,7 @@ function Hero() {
             </div>
           </section>
         </div>
-      </Slider> 
+    
     </>
   );
 }
