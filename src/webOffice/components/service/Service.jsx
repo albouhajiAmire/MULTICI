@@ -17,7 +17,7 @@ function Service() {
             >
               <div className="service-item">
                 <div className="img">
-                  <img src="/img/services-1.jpg" className="img-fluid" alt="" />
+                  <img src="/img/stock-photo-telemarketer-having-a-video--2733421.jpg" className="img-fluid" alt="" />
                 </div>
                 <div className="details position-relative">
                   <div className="icon">
@@ -42,7 +42,7 @@ function Service() {
             >
               <div className="service-item">
                 <div className="img">
-                  <img src="/img/services-2.jpg" className="img-fluid" alt="" />
+                  <img src="/img/pexels-thirdman.jpg" className="img-fluid" alt="" />
                 </div>
                 <div className="details position-relative">
                   <div className="icon">
@@ -69,7 +69,7 @@ function Service() {
             >
               <div className="service-item">
                 <div className="img">
-                  <img src="/img/services-3.jpg" className="img-fluid" alt="" />
+                  <img src="/img/services-5.jpg" className="img-fluid" alt="" />
                 </div>
                 <div className="details position-relative">
                   <div className="icon">
@@ -93,7 +93,7 @@ function Service() {
             >
               <div className="service-item">
                 <div className="img">
-                  <img src="/img/services-4.jpg" className="img-fluid" alt="" />
+                  <img src="/img/services-6.jpg" className="img-fluid" alt="" />
                 </div>
                 <div className="details position-relative">
                   <div className="icon">

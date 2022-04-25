@@ -21,6 +21,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import { io } from "socket.io-client";
 import Forgot from "./auth/Forgot";
 import Profil from "./webOffice/pages/profil/Profil";
+import ContactPage from "./webOffice/pages/contacts/ContactPage";
 
 
 const Chats = lazy(() => import("./webOffice/components/chat/chats"));
@@ -38,6 +39,7 @@ function App() {
             <Route path="/emploi" element={<FormEmpl />} />
             <Route path="/register" element={<Register />} />
             <Route path="/proposnous" element={<Aboutpage />} />
+            <Route path="/contact" element={<ContactPage />} />
             <Route path="/durabilite" element={<Sustainabilitypage />} />
             <Route path="/comment-nous-aidons" element={<Help />} />
             <Route path="/confirmer/:id" element={<Confirm />} />

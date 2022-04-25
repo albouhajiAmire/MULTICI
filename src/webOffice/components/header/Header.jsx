@@ -23,7 +23,7 @@ function Header() {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { isAuth } = useSelector((state) => state.auth);
+  const { isAuth ,user} = useSelector((state) => state.auth);
 
   useEffect(() => {
     dispatch(isAuthentication());
@@ -71,7 +71,8 @@ function Header() {
                       }}
                     >
                       <span>
-                   name profile
+                      {/* {user.firstname + " "+ user.lastname} */}
+                   {`${user.firstname} ${user.lastname}`}
                       </span>
                       <i className="fa-solid fa-chevron-down"></i>
                     </a>
@@ -99,7 +100,7 @@ function Header() {
                       to={"/comment-nous-aidons"}
                       className="nav-link scrollto"
                     >
-                      comment-nous-aidons
+                      comment nous aidons
                     </NavLink>
                   </li>
                   <li className="dropdown">
@@ -109,7 +110,7 @@ function Header() {
                         handleDropDown(e);
                       }}
                     >
-                      <span>Societe</span> <i className="bi bi-chevron-down" />
+                      <span>Societe</span><i className="fa-solid fa-sort-down"></i>
                     </a>
                     <ul>
                       <li className="dropdown">
@@ -134,7 +135,7 @@ function Header() {
                     </ul>
                   </li>
                   <li>
-                    <NavLink to={"/"} className="nav-link scrollto">
+                    <NavLink to={"/contact"} className="nav-link scrollto">
                       Contact
                     </NavLink>
                   </li>

@@ -6,7 +6,7 @@ function WhatService() {
       <section id="countsus" className="countsus">
         <div className="container" data-aos="fade-up">
           <div className="row no-gutters">
-            <div className="col-lg-4 col-md-6 d-md-flex align-items-md-stretch">
+            <div className="col-lg-4 col-md-6 d-md-flex align-items-md-stretch  mt-2 mb-3">
               <div className="count-box">
               <i className="fa-brands fa-cloudscale"></i>
                 <span className="purecounter">
@@ -20,7 +20,7 @@ function WhatService() {
                 </p>
               </div>
             </div>
-            <div className="col-lg-4 col-md-6 d-md-flex align-items-md-stretch">
+            <div className="col-lg-4 col-md-6 d-md-flex align-items-md-stretch mt-2 mb-3">
               <div className="count-box">
               <i className="fa-solid fa-briefcase"></i>
                 <span className="purecounter">QUALITÉ ÉPROUVÉE</span>
@@ -33,7 +33,7 @@ function WhatService() {
                 </p>
               </div>
             </div>
-            <div className="col-lg-4 col-md-6 d-md-flex align-items-md-stretch">
+            <div className="col-lg-4 col-md-6 d-md-flex align-items-md-stretch mt-2 mb-3">
               <div className="count-box">
               <i className="fa-brands fa-expeditedssl"></i>
                 <span className="purecounter">SÉCURISÉ et PROTÉGÉ </span>

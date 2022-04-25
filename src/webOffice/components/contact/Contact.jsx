@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../../assets/css/styleMessage.css"
+import "../../../assets/css/styleMessage.css";
 import { create } from "../../axios/service/contact";
 function Contact() {
   const [inputError, setInputError] = useState({
@@ -120,8 +120,8 @@ function Contact() {
                     <p>rekrute.multic@gmail.com</p>
                   </div>
                 </div>
-                <div className="col-md-6">
-                  <div className="info-box mt-4">
+                <div className="col-md-6 mb-3">
+                  <div className="info-box mt-4 ">
                     <i className="fa-solid fa-phone"></i>
                     <h3>Tél :</h3>
                     <p>
@@ -139,7 +139,7 @@ function Contact() {
                 className="react-email-form"
               >
                 <div className="row">
-                {stuff.loader && (
+                  {stuff.loader && (
                     <div className="loading">
                       <div className="ring">
                         Chargement...
@@ -153,33 +153,37 @@ function Contact() {
                   {stuff.successMessage && (
                     <div className="succes">{stuff.successMessage}</div>
                   )}
-                  <div className="col-md-6 form-group">
-                    <input
-                      type="text"
-                      name="firstname"
-                      className="form-control"
-                      id="name"
-                      placeholder="Nom"
-                      value={firstname}
-                      onChange={(e) => handleInputChange(e)}
-                    />
-                    {inputError.firstname !== "" && (
-                      <div className="error">{inputError.firstname}</div>
-                    )}
-                  </div>
-                  <div className="col-md-6 form-group">
-                    <input
-                      type="text"
-                      name="lastname"
-                      className="form-control"
-                      id="name"
-                      placeholder="Prénom"
-                      value={lastname}
-                      onChange={(e) => handleInputChange(e)}
-                    />
-                    {inputError.lastname !== "" && (
-                      <div className="error">{inputError.lastname}</div>
-                    )}
+                  <div className="row mt-3">
+                    <div className="col-md-12 form-group">
+                      <input
+                        type="text"
+                        name="firstname"
+                        className="form-control"
+                        id="name"
+                        placeholder="Nom"
+                        value={firstname}
+                        onChange={(e) => handleInputChange(e)}
+                      />
+                      {inputError.firstname !== "" && (
+                        <div className="error">{inputError.firstname}</div>
+                      )}
+                    </div>
+                    </div>
+                    <div className="row mt-3">
+                    <div className="col-md-12 form-group ">
+                      <input
+                        type="text"
+                        name="lastname"
+                        className="form-control"
+                        id="name"
+                        placeholder="Prénom"
+                        value={lastname}
+                        onChange={(e) => handleInputChange(e)}
+                      />
+                      {inputError.lastname !== "" && (
+                        <div className="error">{inputError.lastname}</div>
+                      )}
+                    </div>
                   </div>
                 </div>
                 <div className="row mt-3">

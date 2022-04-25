@@ -1,61 +1,111 @@
-
-import React, { useState } from "react";
-import { toast} from 'react-toastify';
+import React, { useState, useEffect } from "react";
+import { toast } from "react-toastify";
 import "../../auth/login.css";
 import { CvAuth } from "../axios/service/auth";
 import Header from "../components/header/Header";
-
+import { Create as CreateFile } from "../axios/service/file";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { isAuthentication } from "../redux/actions/auth";
 function FormEmpl() {
+  const [loader, setLoader] = useState(false);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { isAuth, user } = useSelector((state) => state.auth);
   const [formData, setFormData] = useState({
-    type: "",
+    type: "none",
     presentation: "",
     birthday: "",
     password: "",
     gender: "male",
-    certif: "",
+    certif: "none",
     cvId: "",
+    userId: user._id,
   });
+  const [fileName, setFileName] = useState("");
+  // const [cvId, setCvId] = useState("");
   const { type, presentation, certif, birthday, gender, cvId } = formData;
   const handleInputChange = (evt) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value });
     console.log(evt.target.value);
   };
+
+  useEffect(() => {
+    dispatch(isAuthentication());
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (!isAuth) {
+      navigate("/login");
+    }
+  }, [isAuth]);
   const validate = (evt) => {
     evt.preventDefault();
-    const data = new FormData();
-    
-    for(let i = 0; i < cvId.length; i++) {
-       data.append('file', cvId[i]);
+    let data = {};
+    if (certif === "none") {
+      const certificate = false;
+      data = { ...formData, certificate };
+    } else {
+      const certificate = true;
+      const certificateName = certif;
+      data = { ...formData, certificate, certificateName };
     }
-    // debugger
-    CvAuth(formData)
+    if (cvId === "") {
+      toast.error("cv id not");
+      return;
+    }
+    setLoader(true);
+    CvAuth(data)
       .then(({ data }) => {
         if (data.err) {
-          toast.error('Télécharger no succès');
+          toast.error("Télécharger no succès");
+          setLoader(false);
         } else {
-          toast.success('Télécharger le succès');
+          toast.success("Télécharger le succès");
+          setLoader(false);
         }
       })
       .catch((err) => {
-        toast.error('Il ya quelque chose qui ne va pas!!');
+        toast.error("Il ya quelque chose qui ne va pas!!");
+        setLoader(false);
       });
-    // let data = {}
-    // if( certif === "none"){
-    //   certificate = false
-    //   data = {...formData,certificate }
-    // }else{
-    //   certificate = true;
-    //   certificateName = certif
-    //   data = {...formData,certificate, certificateName}
-    // }
   };
- 
+
+  const sendFile = (evt) => {
+    if (evt.target.files && evt.target.files[0]) {
+      const img = evt.target.files[0];
+      console.log(img.name);
+      //return
+      const formCv = new FormData();
+      formCv.append("image", img);
+      setLoader(true);
+      CreateFile(formCv)
+        .then(({ data }) => {
+          if (!data.err) {
+            setFormData({ ...formData, cvId: data.msg });
+            toast.success(" cv apload");
+            setFileName(img.name);
+            setLoader(false);
+          } else {
+            toast.error(" e err");
+            setLoader(false);
+          }
+        })
+        .catch((err) => {
+          console.log("get orders api err ", err);
+          toast.error(" eeeeeeerr");
+          setLoader(false);
+        });
+    }
+  };
+
   return (
     <>
       <Header />
       <section style={{ marginTop: "30px" }}>
         <div className="formbg-outer">
           <div className="formbg">
+            {loader && <h1>loading...</h1>}
             <div className="formbg-inner padding-horizontal--48">
               <span className="padding-bottom--15 spanlogin">
                 Postolez-vous à votre CV
@@ -72,7 +122,7 @@ function FormEmpl() {
                     value={certif}
                     onChange={(evt) => handleInputChange(evt)}
                   >
-                    <option selected></option>
+                    <option value="none" ></option>
                     <option value="none">sans déplome </option>
                     <option value="info">déplomer</option>
                   </select>
@@ -88,7 +138,7 @@ function FormEmpl() {
                     value={type}
                     onChange={(evt) => handleInputChange(evt)}
                   >
-                    <option selected>d'emploi</option>
+                    <option value="none">d'emploi</option>
                     <option value="stagepfe">Stage Pfe</option>
                     <option value="stagepre">Stage pré enbauche</option>
                     <option value="emploi"> Emploi</option>
@@ -107,14 +157,24 @@ function FormEmpl() {
                     />
                   </div>
                 </div>
+                {/* <input
+                      type="hidden"
+                      name="userId"
+                      value={user._id}
+                    />
+                      <input
+                      type="hidden"
+                      name="cvId"
+                      value={cvId}
+                     
+                    /> */}
                 <div className="file-card">
                   <div className="file-inputs">
                     <input
                       type="file"
                       name="cvId"
-                      value={cvId}
-                      onChange={(evt) => handleInputChange(evt)}
-                      multiple
+                    
+                      onChange={(evt) => sendFile(evt)}
                     />
                     <button>
                       <i className="fa-solid fa-folder-plus"></i>
@@ -123,7 +183,7 @@ function FormEmpl() {
                   </div>
                   <p className="main">Fichiers pris en charge</p>
                   <p className="info">PDF, JPG, PNG</p>
-                  <span>{cvId}</span>
+                  <span>{fileName}</span> 
                 </div>
                 <div className="field field-checkbox padding-bottom--24 flex-flex align-center">
                   <label className="labellogin col-md-3" htmlFor="checkbox">

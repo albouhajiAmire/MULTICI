@@ -143,7 +143,7 @@ function Footer() {
       </footer>
   
       <a
-        href="#hero"
+        href="#topbar"
         className="back-to-top d-flex align-items-center justify-content-center active"
       >
         <i className="fa-solid fa-arrow-up"></i>
