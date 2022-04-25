@@ -1,13 +1,13 @@
 import React from 'react'
 import Footer from '../../components/footer/Footer'
-import Header from '../../components/header/Header'
+import Navbar from '../../components/header/Navbar'
 import AbooutMultici from '../../components/hero/AbooutMultici'
 import AboutHero from '../../components/hero/AboutHero'
 
 function Aboutpage() {
   return (
     <>
-    <Header/>
+  <Navbar/>
     <AboutHero/>
     <AbooutMultici/>
     <Footer/>

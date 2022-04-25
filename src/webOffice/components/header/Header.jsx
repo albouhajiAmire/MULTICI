@@ -134,6 +134,17 @@ function Header() {
                       </li>
                     </ul>
                   </li>
+                  <li className="dropdown">
+                <a
+                  onClick={(e) => {
+                    handleDropDown(e);
+                  }}
+                  href="dropdown"
+                >
+                  <span>Langue</span>&nbsp;{" "}
+                  <i className="fa fa-chevron-down"></i>{" "}
+                </a>
+              </li> 
                   <li>
                     <NavLink to={"/contact"} className="nav-link scrollto">
                       Contact

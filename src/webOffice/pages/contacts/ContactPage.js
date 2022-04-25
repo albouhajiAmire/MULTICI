@@ -1,14 +1,14 @@
 import React from "react";
 import Contact from "../../components/contact/Contact";
 import Footer from "../../components/footer/Footer";
-import Header from "../../components/header/Header";
+import Navbar from "../../components/header/Navbar";
 import TopHeader from "../../components/tobHeader/TopHeader";
 
 function ContactPage() {
   return (
     <>
       <TopHeader />
-      <Header />
+      <Navbar />
       <section
         id="abouthero"
         className="d-flex flex-column align-items-center justify-content-center"

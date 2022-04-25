@@ -1,11 +1,11 @@
 import React from "react";
 import Footer from "../footer/Footer";
-import Header from "../header/Header";
+import Navbar from "../header/Navbar";
 
 function Help() {
   return (
     <div>
-      <Header />
+      <Navbar />
       <section id="hero">
         <div
           id="heroCarousel"

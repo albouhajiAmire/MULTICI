@@ -1,10 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import Header from "../../components/header/Header";
+import Navbar from "../../components/header/Navbar";
 function Profil() {
   return (
     <>
-    <Header/>
+  <Navbar/>
     <div className="container">
     <div className="pagetitle">
         <h1>Profile</h1>

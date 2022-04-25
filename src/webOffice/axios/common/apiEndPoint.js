@@ -3,7 +3,7 @@ const Host = {
   BACKEND:
     !process.env.NODE_ENV || process.env.NODE_ENV === "development"
       ? "http://localhost:3002"
-      : "https://api.compareprime.com",
+      : "https://back-multic.herokuapp.com",
   PREFIX: "/v1/api",
 };
 const ApiEndpoints = {

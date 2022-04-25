@@ -13,7 +13,7 @@
   transition: 0.3s;
 }
 #topbar .contact-info a:hover {
-  color: #5cb874;
+  color: #0f2f57;
 }
 #topbar .contact-info i {
   color: #b03561;
@@ -26,7 +26,6 @@
 #topbar .social-links a {
   color: #6f6f6f;
   padding: 4px 12px;
-  display: inline-block;
   line-height: 1px;
   transition: 0.3s;
 }
@@ -66,6 +65,7 @@
   z-index: 997;
   padding: 20px 0;
   position: sticky;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 #header.header-scrolled {
   padding: 12px 0;

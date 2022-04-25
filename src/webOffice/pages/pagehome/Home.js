@@ -11,14 +11,13 @@ import Service from "../../components/service/Service";
 import WhatService from "../../components/service/WhatService";
 import Testimonials from "../../components/testimonials/Testimonials";
 import Whyus from "../../components/whyUs/Whyus";
-import TopHeader from "../../components/tobHeader/TopHeader";
 import Featured from "../../components/featured/Featured";
 import MinHero from "../../components/hero/MinHero";
+import Navbar from "../../components/header/Navbar";
 function Home() {
   return (
     <>
-      <TopHeader />
-      <Header />
+      <Navbar/>
       <Hero />
       <AboutUs />
       <WhatService />
