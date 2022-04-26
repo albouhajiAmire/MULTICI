@@ -107,9 +107,9 @@ function Register() {
         setStuff({
           loader: false,
           successMessage: "",
-          errorMessage: "someting went wrong,please try again",
+          errorMessage: "Une erreur Veuillez réessayer",
         });
-        toast.error('someting went wrong,please try again');
+        toast.error('Une erreur Veuillez réessayer');
       });
   };
   useEffect(() => {

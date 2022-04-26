@@ -27,7 +27,7 @@ const Auth = (formData) => async dispatch => {
     }).catch(err => {
         console.log("get orders api err ", err);
         dispatch({ type: STOP_LOADING });
-        dispatch({ type: SHOW_ERROR_MESSAGE, payload : "xxxxxxrrrr" })
+        dispatch({ type: SHOW_ERROR_MESSAGE, payload : "Une erreur Veuillez réessayer" })
     })
 }
 

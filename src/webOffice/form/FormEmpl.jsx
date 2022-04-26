@@ -7,6 +7,7 @@ import { Create as CreateFile } from "../axios/service/file";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { isAuthentication } from "../redux/actions/auth";
+import Navbar from "../components/header/Navbar";
 function FormEmpl() {
   const [loader, setLoader] = useState(false);
   const navigate = useNavigate();
@@ -101,7 +102,7 @@ function FormEmpl() {
 
   return (
     <>
-      <Header />
+   <Navbar/>
       <section style={{ marginTop: "30px" }}>
         <div className="formbg-outer">
           <div className="formbg">
