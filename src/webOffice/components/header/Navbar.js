@@ -6,16 +6,16 @@ import { isAuthentication } from "../../redux/actions/auth";
 const Navbar = () => {
   const toggleMenu = (e) => {
     const navbar = e.target.parentElement;
-    navbar.classList.toggle("navbar-mobile");
-    e.target.classList.toggle("fa-bars");
-    e.target.classList.toggle("fa-xmark");
+    navbar.classNameList.toggle("navbar-mobile");
+    e.target.classNameList.toggle("fa-bars");
+    e.target.classNameList.toggle("fa-xmark");
   };
   const handleDropDown = (e) => {
     if (e.target.tagName === "A") {
-      e.target.nextElementSibling.classList.toggle("dropdown-active");
+      e.target.nextElementSibling.classNameList.toggle("dropdown-active");
       return;
     }
-    e.target.parentElement.nextElementSibling.classList.toggle(
+    e.target.parentElement.nextElementSibling.classNameList.toggle(
       "dropdown-active"
     );
   };
@@ -49,7 +49,7 @@ const Navbar = () => {
                 <ul>
                   <li>
                     <NavLink className="nav-link scrollto active" to="/">
-                      <i className="fas fa-acorn"></i> accueil
+                      <i className="fas fa-acorn"></i> Accueil
                     </NavLink>
                   </li>
                   <li>
@@ -57,25 +57,54 @@ const Navbar = () => {
                       to={"/emploi"}
                       className="nav-link scrollto active"
                     >
-                      d'emande d'emploi
+                      D'emande d'emploi
                     </NavLink>
                   </li>
+   
                   <li className="dropdown">
                     <a
                       onClick={(e) => {
                         handleDropDown(e);
                       }}
-                      href="#dropdown"
+                      href="#"
                     >
-                      <span>Societe</span>&nbsp;{" "}
-                      <i className="fa fa-chevron-down"></i>
+                      <span>Langue</span>&nbsp;{" "}
+                      <i className="fa fa-chevron-down"></i>{" "}
                     </a>
                     <ul>
                       <li>
-                        <NavLink to={"/proposnous"}>à propos de nous</NavLink>
+                          <img
+                            className="logotranslate"
+                            alt="frensh"
+                            src="img/france.png"
+                            style={{width:'20%'}}
+                          />
+                          Francais
+                      
                       </li>
+
                       <li>
-                        <NavLink to={"/durabilite"}>durabilité</NavLink>
+                        <a href="#">
+                          <img
+                            className="logotranslate"
+                            src="/img/morroco.png"
+                            style={{width:'20%'}}
+                            alt="arabic"
+                          />{" "}
+                          Arabe
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="#">
+                          <img
+                            className="logotranslate"
+                            src="/img/english.png"
+                            style={{width:'20%'}}
+                            alt="english"
+                          />
+                          Anglais
+                        </a>
                       </li>
                     </ul>
                   </li>
@@ -94,57 +123,11 @@ const Navbar = () => {
                     </a>
                     <ul>
                       <li>
-                        <NavLink to={"/profile"}>profile</NavLink>
+                        <NavLink to={"/profile"}><i className="fa-solid fa-user"></i>Profile</NavLink>
                       </li>
                       <li>
                         <a href="#deconnecter" onClick={handelOut}>
-                          se déconnecter
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li className="dropdown">
-                    <a
-                      onClick={(e) => {
-                        handleDropDown(e);
-                      }}
-                      href="#"
-                    >
-                      <span>Langue</span>&nbsp;{" "}
-                      <i className="fa fa-chevron-down"></i>{" "}
-                    </a>
-                    <ul>
-                      <li>
-                        <a href="#">
-                          <img
-                            className="logotranslate"
-                            src={""}
-                            alt="frensh"
-                          />
-                          Francais
-                        </a>
-                      </li>
-
-                      <li>
-                        <a href="#">
-                          <img
-                            className="logotranslate"
-                            src={""}
-                            alt="arabic"
-                          />{" "}
-                          Arabe
-                        </a>
-                      </li>
-
-                      <li>
-                        <a href="#">
-                          <img
-                            className="logotranslate"
-                            src={""}
-                            alt="english"
-                          />
-                          Anglais
+                        <i className="fa-solid fa-arrow-right-from-bracket"></i>  Se déconnecter
                         </a>
                       </li>
                     </ul>
@@ -156,7 +139,7 @@ const Navbar = () => {
                 <ul>
                   <li>
                     <NavLink className="nav-link scrollto active" to="/">
-                      <i className="fas fa-acorn"></i> accueil
+                      <i className="fas fa-acorn"></i> Accueil
                     </NavLink>
                   </li>
                   <li>
@@ -164,7 +147,7 @@ const Navbar = () => {
                       to={"/comment-nous-aidons"}
                       className="nav-link scrollto"
                     >
-                      comment nous aidons
+                      Comment nous aidons
                     </NavLink>
                   </li>
                   <li className="dropdown">
@@ -174,15 +157,15 @@ const Navbar = () => {
                       }}
                       href="#"
                     >
-                      <span>Societe</span>&nbsp;{" "}
+                      <span>Societe</span>&nbsp;
                       <i className="fa fa-chevron-down"></i>
                     </a>
                     <ul>
                       <li>
-                        <NavLink to={"/proposnous"}>à propos de nous</NavLink>
+                        <NavLink to={"/proposnous"}>A propos de nous</NavLink>
                       </li>
                       <li>
-                        <NavLink to={"/durabilite"}>durabilité</NavLink>
+                        <NavLink to={"/durabilite"}>Durabilité</NavLink>
                       </li>
                     </ul>
                   </li>
@@ -210,7 +193,8 @@ const Navbar = () => {
                         <a href="#francais">
                           <img
                             className="logotranslate"
-                            src={""}
+                            src="/img/france.png"
+                            style={{width:'20%'}}
                             alt="frensh"
                           />
                           Francais
@@ -221,7 +205,8 @@ const Navbar = () => {
                         <a href="#arabe">
                           <img
                             className="logotranslate"
-                            src={""}
+                            src="/img/morroco.png"
+                            style={{width:'20%'}}
                             alt="arabic"
                           />{" "}
                           Arabe
@@ -232,7 +217,8 @@ const Navbar = () => {
                         <a href="#english">
                           <img
                             className="logotranslate"
-                            src={""}
+                            src="/img/english.png"
+                            style={{width:'20%'}}
                             alt="english"
                           />
                           Anglais

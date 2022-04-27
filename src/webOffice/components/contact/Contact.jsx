@@ -23,6 +23,7 @@ function Contact() {
     loading: false,
   });
   const { firstname, lastname, email, phone, subject, comment } = formData;
+
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
     if (e.target.name === "email") {
@@ -83,6 +84,14 @@ function Contact() {
           loader: false,
           successMessage: "Message d'opération réussie.",
           errorMessage: "",
+        });
+        setFormData({
+          firstname: "",
+          lastname: "",
+          email: "",
+          phone: "",
+          subject: "",
+          comment: "",
         });
       } else {
         setStuff({
@@ -168,8 +177,8 @@ function Contact() {
                         <div className="error">{inputError.firstname}</div>
                       )}
                     </div>
-                    </div>
-                    <div className="row mt-3">
+                  </div>
+                  <div className="row mt-3">
                     <div className="col-md-12 form-group ">
                       <input
                         type="text"

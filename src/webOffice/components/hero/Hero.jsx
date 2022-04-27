@@ -25,7 +25,7 @@ function Hero() {
                   <div className="carousel-container">
                     <div className="container">
                       <h2 className="animate__animated animate__fadeInDown">
-                        Bienvenue sur <span>Multici</span>
+                        Bienvenue sur <span>Multi-c</span>
                       </h2>
                       <p className="animate__animated animate__fadeInUp">
                         Transformez votre expérience client à chaque

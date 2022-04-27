@@ -26,6 +26,7 @@ function FormEmpl() {
   const [fileName, setFileName] = useState("");
   // const [cvId, setCvId] = useState("");
   const { type, presentation, certif, birthday, gender, cvId } = formData;
+
   const handleInputChange = (evt) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value });
     console.log(evt.target.value);
@@ -65,6 +66,14 @@ function FormEmpl() {
           toast.success("Télécharger le succès");
           setLoader(false);
         }
+        setFormData({
+          type: "",
+          presentation: "",
+          certif: "",
+          birthday: "",
+          gender: "",
+          cvId: "",
+        });
       })
       .catch((err) => {
         toast.error("Il ya quelque chose qui ne va pas!!");
@@ -102,7 +111,7 @@ function FormEmpl() {
 
   return (
     <>
-   <Navbar/>
+      <Navbar />
       <section style={{ marginTop: "30px" }}>
         <div className="formbg-outer">
           <div className="formbg">
@@ -123,7 +132,7 @@ function FormEmpl() {
                     value={certif}
                     onChange={(evt) => handleInputChange(evt)}
                   >
-                    <option value="none" ></option>
+                    <option value="none"></option>
                     <option value="none">sans déplome </option>
                     <option value="info">déplomer</option>
                   </select>
@@ -174,7 +183,6 @@ function FormEmpl() {
                     <input
                       type="file"
                       name="cvId"
-                    
                       onChange={(evt) => sendFile(evt)}
                     />
                     <button>
@@ -184,7 +192,7 @@ function FormEmpl() {
                   </div>
                   <p className="main">Fichiers pris en charge</p>
                   <p className="info">PDF, JPG, PNG</p>
-                  <span>{fileName}</span> 
+                  <span>{fileName}</span>
                 </div>
                 <div className="field field-checkbox padding-bottom--24 flex-flex align-center">
                   <label className="labellogin col-md-3" htmlFor="checkbox">
@@ -214,7 +222,7 @@ function FormEmpl() {
                 <div className="row">
                   <div className="field padding-bottom--24 col-md-12">
                     <label className="labellogin" htmlFor="email">
-                      Date de depart (*):
+                      Lettre Motivation (*):
                     </label>
                     <textarea
                       name="presentation"

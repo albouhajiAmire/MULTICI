@@ -17,8 +17,8 @@ function AbooutMultici() {
               client pour les 2000 entreprises mondiales. Nous aidons nos
               marques partenaires à améliorer la valeur durable des relations
               clients en créant une expérience client intelligente qui attire,
-              convertit, engage et fidélise les clients.<br/> <br/> 
-              
+              convertit, engage et fidélise les clients.
+              <br/> <br/> 
               Multijee continue d'évoluer vers une mission : aider les gens, une
               interaction qui se soucie à la fois. Le groupe Multi C de marques
               innovantes sont des partenaires qui partagent notre objectif : de
@@ -29,7 +29,7 @@ function AbooutMultici() {
               nous avons appris en cours de route : des solutions complètes
               d'automatisation des processus, de marketing, de vente et de
               service client, le tout sous un même toit.
-              <br /><br/> <br/> 
+              <br /><br/>
               Nous pouvons fournir les équipes, les systèmes et la technologie
               dont vous avez besoin pour simplifier et améliorer toutes les
               étapes de votre parcours client. Nous le faisons tout en élevant
@@ -61,7 +61,7 @@ function AbooutMultici() {
             <div className="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
               <div className="icon-box">
                 <div className="icon">
-                  <i className="fa-solid fa-eye-low-vision"></i>
+                <i className="fa-solid fa-arrows-to-eye"></i>
                 </div>
                 <h4 className="title">
                   <a href>Vision</a>

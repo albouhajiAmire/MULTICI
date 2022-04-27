@@ -5,6 +5,12 @@ import "./login.css";
 import { toast } from "react-toastify";
 toast.configure();
 function Register() {
+  console.log(
+    "gggggg",
+    !process.env.NODE_ENV || process.env.NODE_ENV === "development"
+      ? "http://localhost:3002"
+      : "https://backend-multic.herokuapp.com"
+  );
   const [inputError, setInputError] = useState({
     firstname: "",
     lastname: "",
@@ -74,7 +80,7 @@ function Register() {
 
     for (const input in inputError) {
       if (inputError[input] !== "") {
-        toast.error('error');
+        toast.error("error");
         return;
       }
     }
@@ -109,18 +115,24 @@ function Register() {
           successMessage: "",
           errorMessage: "Une erreur Veuillez réessayer",
         });
-        toast.error('Une erreur Veuillez réessayer');
+        toast.error("Une erreur Veuillez réessayer");
       });
   };
   useEffect(() => {
     if (stuff.successMessage === "validate") {
-      toast.success('message succes');
+      toast.success("message succes");
       setStuff({
         ...stuff,
         successMessage: "",
       });
     }
   }, [stuff.successMessage]);
+  //START BTN Show && HIDE :
+  const [eye, SetEye] = useState(false);
+  const toggleBtn = () => {
+    SetEye((prevState) => !prevState);
+  };
+  //END BTN Show && HIDE :
   return (
     <>
       <div className="login-root">
@@ -240,11 +252,16 @@ function Register() {
                     </div>
                   </div>
                 )}
-                {stuff.errorMessage && <div className="errorform">{stuff.errorMessage}</div>}
-                {stuff.successMessage && <div className="succesform">{stuff.successMessage}</div>}
+                {stuff.errorMessage && (
+                  <div className="errorform">{stuff.errorMessage}</div>
+                )}
+                {stuff.successMessage && (
+                  <div className="succesform">{stuff.successMessage}</div>
+                )}
                 <div className="formbg-inner padding-horizontal--48">
                   <span className="padding-bottom--15 spanlogin">
-                    Connectez-vous à votre compte
+                 <strong>Vous n'avez pas de compte ?</strong><br/>
+                  <NavLink to={"/login"}>Se connecter</NavLink>
                   </span>
                   <form id="stripe-login" onSubmit={Signup}>
                     <div className="row">
@@ -273,7 +290,7 @@ function Register() {
                           onChange={(evt) => handleInputChange(evt)}
                         />
                         {inputError.lastname !== "" && (
-                          <div  className="err">{inputError.lastname}</div>
+                          <div className="err">{inputError.lastname}</div>
                         )}
                       </div>
                     </div>
@@ -287,7 +304,9 @@ function Register() {
                         value={email}
                         onChange={(evt) => handleInputChange(evt)}
                       />
-                      {inputError.email !== "" && <div  className="err">{inputError.email}</div>}
+                      {inputError.email !== "" && (
+                        <div className="err">{inputError.email}</div>
+                      )}
                     </div>
                     <div className="field padding-bottom--24">
                       <div className="grid--50-50">
@@ -299,13 +318,25 @@ function Register() {
                         </div>
                       </div>
                       <input
-                        type="password"
+                        className="password-field"
                         name="password"
                         value={password}
                         onChange={(evt) => handleInputChange(evt)}
+                        type={eye ? "text" : "password"}
                       />
+                      <button
+                        type="button"
+                        className="btnEye"
+                        onClick={toggleBtn}
+                      >
+                        {eye ? (
+                          <i className="fa-solid fa-eye"></i>
+                        ) : (
+                          <i className="fa-solid fa-eye-slash"></i>
+                        )}
+                      </button>
                       {inputError.password !== "" && (
-                        <div  className="err">{inputError.password}</div>
+                        <div className="err">{inputError.password}</div>
                       )}
                     </div>
                     <div className="field padding-bottom--24">
@@ -313,13 +344,25 @@ function Register() {
                         Confirmer mot de passe (*):
                       </label>
                       <input
-                        type="password"
+                        className="password-field"
                         name="confirmpassword"
                         value={confirmpassword}
                         onChange={(evt) => handleInputChange(evt)}
+                        type={eye ? "text" : "password"}
                       />
+                      <button
+                        type="button"
+                        className="btnEye"
+                        onClick={toggleBtn}
+                      >
+                        {eye ? (
+                          <i className="fa-solid fa-eye"></i>
+                        ) : (
+                          <i className="fa-solid fa-eye-slash"></i>
+                        )}
+                      </button>
                       {inputError.confirmpassword !== "" && (
-                        <div  className="err">{inputError.confirmpassword}</div>
+                        <div className="err">{inputError.confirmpassword}</div>
                       )}
                     </div>
 

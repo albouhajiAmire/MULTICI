@@ -9,7 +9,7 @@ function AboutHero() {
       >
         <h1>VRAIS GENS.</h1>
         <h2>SOLUTIONS RÉELLES.®</h2>
-        <span>En savoir plus sur Multi-ci.</span>
+        <span>En savoir plus sur Multi-c.</span>
         <a href="#about" className="btn-get-started scrollto">
         <i className="fa-solid fa-angles-down"></i>
         </a>

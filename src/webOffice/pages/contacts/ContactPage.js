@@ -4,7 +4,8 @@ import Footer from "../../components/footer/Footer";
 import Navbar from "../../components/header/Navbar";
 import TopHeader from "../../components/tobHeader/TopHeader";
 
-function ContactPage() {
+function ContactPage(props) {
+  const socket = props.socket
   return (
     <>
       <TopHeader />
@@ -32,7 +33,7 @@ function ContactPage() {
         </p>
       </section> */}
       <Contact />
-      <Footer />
+      <Footer  socket={socket}/>
     </>
   );
 }

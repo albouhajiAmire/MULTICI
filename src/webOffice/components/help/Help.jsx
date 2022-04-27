@@ -2,7 +2,8 @@ import React from "react";
 import Footer from "../footer/Footer";
 import Navbar from "../header/Navbar";
 
-function Help() {
+function Help(props) {
+  const socket = props.socket
   return (
     <div>
       <Navbar />
@@ -60,7 +61,7 @@ function Help() {
                 de manière transparente que possible.
               </h3>
               <p className="fst-italic">
-                <i class="fa-solid fa-check"></i> La sélection d'un partenaire
+                <i className="fa-solid fa-check"></i> La sélection d'un partenaire
                 d'externalisation est un gros problème, mais il n'y a rien à
                 transpirer. C'est l'occasion d'atteindre l'excellence dans des
                 domaines qui ne font probablement pas partie des compétences de
@@ -101,7 +102,7 @@ function Help() {
                 l'engagement et la fidélité des clients.
               </h3>
               <p className="fst-italic">
-              <i class="fa-solid fa-check"></i>    Les solutions de gestion du cycle de vie pour le consommateur
+              <i className="fa-solid fa-check"></i>    Les solutions de gestion du cycle de vie pour le consommateur
                 numérique deviennent de plus en plus importantes. Vos clients
                 communiquent avec vous de plus de façons que jamais auparavant.
                 Mais êtes-vous vraiment en contact avec eux ?
@@ -140,7 +141,7 @@ function Help() {
                 stimulent la croissance et la rentabilité.
               </h3>
               <p className="fst-italic">
-              <i class="fa-solid fa-check"></i>     Chaque interaction est une opportunité d'approfondir votre
+              <i className="fa-solid fa-check"></i>     Chaque interaction est une opportunité d'approfondir votre
                 relation avec les clients, générant une valeur ajoutée et un
                 potentiel de revenus. Mais capitaliser sur ces moments demande
                 du soin et de la concentration. Notre équipe de spécialistes de
@@ -179,7 +180,7 @@ function Help() {
                 point de contact de service ou de vente.
               </h3>
               <p className="fst-italic">
-              <i class="fa-solid fa-check"></i>   Alors, quel est l'impact de l'expérience client sur la fidélité
+              <i className="fa-solid fa-check"></i>   Alors, quel est l'impact de l'expérience client sur la fidélité
                 à la marque ? Faire en sorte que les clients se sentent
                 valorisés, appréciés et confiants les fidélise et vous aide à
                 étendre votre marque.
@@ -202,7 +203,8 @@ function Help() {
           </div>
         </div>
       </section>
-      <Footer/>
+      <Footer socket={socket}/>
+      
     </div>
   );
 }

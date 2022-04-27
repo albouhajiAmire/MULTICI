@@ -5,7 +5,6 @@ import Contact from "../../components/contact/Contact";
 import Count from "../../components/count/Count";
 import Feature from "../../components/features/Feature";
 import Footer from "../../components/footer/Footer";
-import Header from "../../components/header/Header";
 import Hero from "../../components/hero/Hero";
 import Service from "../../components/service/Service";
 import WhatService from "../../components/service/WhatService";
@@ -14,7 +13,8 @@ import Whyus from "../../components/whyUs/Whyus";
 import Featured from "../../components/featured/Featured";
 import MinHero from "../../components/hero/MinHero";
 import Navbar from "../../components/header/Navbar";
-function Home() {
+function Home(props) {
+  const socket = props.socket
   return (
     <>
       <Navbar/>
@@ -30,7 +30,7 @@ function Home() {
       <Service />
       <Testimonials />
       <Contact />
-      <Footer />
+      <Footer  socket={socket}/>
     </>
   );
 }

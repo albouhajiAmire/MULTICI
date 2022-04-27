@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { toast } from "react-toastify";
 import { Subscribe } from "../../axios/service/subscribe";
 import ChatBox from "../chat/chatBox";
-function Footer() {
+function Footer(props) {
+  const socket = props.socket
   const [formData, setFormData] = useState({
     email: "",
   });
@@ -141,9 +142,9 @@ function Footer() {
           </div>
         </div>
       </footer>
-  
+  <ChatBox socket={socket}/>
       <a
-        href="#topbar"
+        href="#hero"
         className="back-to-top d-flex align-items-center justify-content-center active"
       >
         <i className="fa-solid fa-arrow-up"></i>

@@ -14,6 +14,12 @@ const Login = () => {
   const { errorMsg } = useSelector((state) => state.message);
   const { loading } = useSelector((state) => state.loading);
 
+  //START BTN Show && HIDE :
+  const [eye, SetEye] = useState(false);
+  const toggleBtn = () => {
+    SetEye((prevState) => !prevState);
+  };
+  //END BTN Show && HIDE :
   useEffect(() => {
     dispatch(isAuthentication());
   }, [dispatch]);
@@ -26,12 +32,10 @@ const Login = () => {
 
   useEffect(() => {
     if (errorMsg !== "") {
-      toast.error(errorMsg)
+      toast.error(errorMsg);
       dispatch({ type: CLEAR_MESSAGE });
     }
   }, [errorMsg]);
-
- 
 
   const [formData, setFormData] = useState({ email: "", password: "" });
   const { email, password } = formData;
@@ -39,7 +43,6 @@ const Login = () => {
     email: "",
     password: "",
   });
-
 
   const handleLoginData = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -66,7 +69,7 @@ const Login = () => {
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    
+
     for (const input in inputError) {
       if (inputError[input] !== "") {
         alert("still error");
@@ -76,9 +79,7 @@ const Login = () => {
     dispatch(Auth(formData));
   };
 
-
   return (
-
     <>
       <div className="login-root">
         <div
@@ -179,26 +180,22 @@ const Login = () => {
             style={{ flexGrow: 1, zIndex: 9 }}
           >
             <div className="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
-              <h1>
-                <a href rel="dofollow">
-                  Bienvenue pour vous connecter
-                </a>
-              </h1>
+              <h1>Bienvenue pour vous connecter</h1>
             </div>
             <div className="formbg-outer">
               <div className="formbg">
                 <div className="formbg-inner padding-horizontal--48">
                   <span className="padding-bottom--15 spanlogin">
-                    Connectez-vous à votre compte
+                  <strong>Vous n'avez pas de compte ?</strong><br/>
+                  <NavLink to={"/login"}>S'inscrire</NavLink>
+                  
                   </span>
                   {loading && <strong>loading...</strong>}
                   <div className="">
-                  {errorMsg !== "" && <div className="err">{errorMsg}</div> }   
-                  {loading && (
-              <div class="clock-loader"></div>
-                )}
+                    {errorMsg !== "" && <div className="err">{errorMsg}</div>}
+                    {loading && <div className="clock-loader"></div>}
                   </div>
-                 
+
                   <form
                     id="stripe-login"
                     onSubmit={(e) => {
@@ -229,29 +226,37 @@ const Login = () => {
                           Mot de passe
                         </label>
                         <div className="reset-pass">
-                          <NavLink to={""}>Mot de passe oublié?</NavLink>
+                          <NavLink to={"/forgotpassword"}>Mot de passe oublié?</NavLink>
                         </div>
                       </div>
                       <input
-                        type="password"
+                        className="password-field"
                         name="password"
                         value={password}
                         onChange={(e) => {
                           handleLoginData(e);
                         }}
+                        type={eye ? "text" : "password"}
                       />
+                      <button type="button" className="btnEye" onClick={toggleBtn}>
+                        {eye ? (
+                          <i className="fa-solid fa-eye"></i>
+                        ) : (
+                          <i className="fa-solid fa-eye-slash"></i>
+                        )}
+                      </button>
                       {inputError.password !== "" && (
                         <small style={{ color: "tomato" }}>
                           {inputError.password}
                         </small>
                       )}
                     </div>
-                    <div className="field field-checkbox padding-bottom--24 flex-flex align-center">
+                    {/* <div className="field field-checkbox padding-bottom--24 flex-flex align-center">
                       <label className="labellogin" htmlFor="checkbox">
                         <input type="checkbox" name="checkbox" /> Restez
                         connecté pendant une semaine
                       </label>
-                    </div>
+                    </div> */}
                     <div className="field padding-bottom--24">
                       <input
                         type="submit"
@@ -260,7 +265,7 @@ const Login = () => {
                       />
                     </div>
                     <div className="field">
-                      <NavLink to={"/"} className="ssolink" href="#">
+                      <NavLink to={"/"} className="ssolink">
                         Accuille page
                       </NavLink>
                     </div>

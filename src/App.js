@@ -22,31 +22,31 @@ import { io } from "socket.io-client";
 import Forgot from "./auth/Forgot";
 import Profil from "./webOffice/pages/profil/Profil";
 import ContactPage from "./webOffice/pages/contacts/ContactPage";
+import { Host } from "./webOffice/axios/common/apiEndPoint";
 
 
 const Chats = lazy(() => import("./webOffice/components/chat/chats"));
 
 function App() {
-  // const socket = io("http://localhost:3001");
-  const socket = {}
+  const socket = io(Host.BACKEND);
   return (
     <Provider store={store}>
       <PersistGate persistor={persist}>
         <div className="App">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home socket={socket}/>} />
             <Route path="/login" element={<Login />} />
             <Route path="/emploi" element={<FormEmpl />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/proposnous" element={<Aboutpage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/durabilite" element={<Sustainabilitypage />} />
-            <Route path="/comment-nous-aidons" element={<Help />} />
+            <Route path="/proposnous" element={<Aboutpage socket={socket}/>} />
+            <Route path="/contact" element={<ContactPage socket={socket}/>} />
+            <Route path="/durabilite" element={<Sustainabilitypage socket={socket}/>} />
+            <Route path="/comment-nous-aidons" element={<Help socket={socket}/>} />
             <Route path="/confirmer/:id" element={<Confirm />} />
             <Route path="/404-not-found" element={<NotFound />} />
             <Route path="/profile" element={<Profil />} />
             <Route path="/*" element={<NotFound />} />
-            <Route path="/forgot" element={<Forgot />} />
+            <Route path="/forgotpassword" element={<Forgot />} />
             <Route
               path="/chat"
               element={
@@ -55,7 +55,6 @@ function App() {
                 </Suspense>
               }
             />
-
             <Route
               path="/chat/:id/:v"
               element={

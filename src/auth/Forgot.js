@@ -4,15 +4,16 @@ import { useDispatch, useSelector } from "react-redux";
 import "./login.css";
 import { Auth, isAuthentication } from "../webOffice/redux/actions/auth";
 import { ForgotAuth } from "../webOffice/axios/service/auth";
+import { toast } from "react-toastify";
 
 const Forgot = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const { isAuth } = useSelector((state) => state.auth);
-  const { errorMsg } = useSelector((state) => state.message);
-  const { loading } = useSelector((state) => state.loading);
-
+  // const { errorMsg } = useSelector((state) => state.message);
+  // const { loading } = useSelector((state) => state.loading);
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     dispatch(isAuthentication());
   }, [dispatch]);
@@ -28,11 +29,11 @@ const Forgot = () => {
   const [email, setEmail] = useState ('');
 
   const [emailError, setIEmailError] = useState("");
-  const [stuff, setStuff] = useState({
-    errorMessage: "",
-    successMessage: "",
-    loader: false,
-  });
+  // const [stuff, setStuff] = useState({
+  //   errorMessage: "",
+  //   successMessage: "",
+  //   loader: false,
+  // });
 
   const handleLoginData = (e) => {
     setEmail( e.target.value );    
@@ -48,49 +49,28 @@ const Forgot = () => {
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    setStuff({ ...stuff, loader: true });
-
+    setLoading(true);
       if (emailError !== "") {
-        alert("still error");
+       toast.error('email no correct')
         return;
       }
       ForgotAuth({email})
       .then(({ data }) => {
         if (!data.err) {
-          setStuff({
-            loader: false,
-            successMessage: "validate",
-            errorMessage: "",
-          });
+          setLoading(false);
           setEmail("");
         } else {
           const msg = typeof data.msg === "string" ? data.msg : data.msg[0];
-          setStuff({
-            loader: false,
-            successMessage: "",
-            errorMessage: msg,
-          });
+          setLoading(false);
+          toast.error(msg);
         }
       })
       .catch((err) => {
-        setStuff({
-          loader: false,
-          successMessage: "",
-          errorMessage: "error",
-        });
+        setLoading(false);
+        toast.error('Oooh!! quelque-chose ne va pas?');
       });
    
   };
-
-  useEffect(() => {
-    if (stuff.successMessage === "validate") {
-      alert("succes");
-      setStuff({
-        ...stuff,
-        successMessage: "",
-      });
-    }
-  }, [stuff.successMessage]);
 
   return (
 
@@ -207,7 +187,7 @@ const Forgot = () => {
                     Connectez-vous à votre compte
                   </span>
                 
-                  {stuff.loader && (
+                  {loading && (
                     <div className="loading">
                       <div className="ring">
                         Chargement...
@@ -215,12 +195,7 @@ const Forgot = () => {
                       </div>
                     </div>
                   )}
-                  {stuff.errorMessage && (
-                    <div className="error-msg">{stuff.errorMessage}</div>
-                  )}
-                  {stuff.successMessage && (
-                    <div className="succes">{stuff.successMessage}</div>
-                  )}
+               
                   <form
                     id="stripe-login"
                     onSubmit={(e) => {
@@ -246,12 +221,12 @@ const Forgot = () => {
                       )}
                     </div>
 
-                    <div className="field field-checkbox padding-bottom--24 flex-flex align-center">
+                    {/* <div className="field field-checkbox padding-bottom--24 flex-flex align-center">
                       <label className="labellogin" htmlFor="checkbox">
                         <input type="checkbox" name="checkbox" /> Restez
                         connecté pendant une semaine
                       </label>
-                    </div>
+                    </div> */}
                     <div className="field padding-bottom--24">
                       <input
                         type="submit"
