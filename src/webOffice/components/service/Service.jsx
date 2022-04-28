@@ -88,7 +88,7 @@ function Service() {
               </div>
             </div>
             {/* End Service Item */}
-            <div
+            {/* <div
               className="col-xl-4 col-md-6"
             >
               <div className="service-item">
@@ -113,7 +113,7 @@ function Service() {
                   <a href="#" className="stretched-link" />
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

@@ -3,39 +3,41 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { Logout } from "../../redux/actions/auth";
 import { useDispatch, useSelector } from "react-redux";
 import { isAuthentication } from "../../redux/actions/auth";
-const Navbar = () => {
+
+
+const Header = () => {
   const toggleMenu = (e) => {
     const navbar = e.target.parentElement;
-    navbar.classNameList.toggle("navbar-mobile");
-    e.target.classNameList.toggle("fa-bars");
-    e.target.classNameList.toggle("fa-xmark");
+    navbar.classList.toggle("navbar-mobile");
+    e.target.classList.toggle("fa-bars");
+    e.target.classList.toggle("fa-xmark");
   };
   const handleDropDown = (e) => {
     if (e.target.tagName === "A") {
-      e.target.nextElementSibling.classNameList.toggle("dropdown-active");
+      e.target.nextElementSibling.classList.toggle("dropdown-active");
       return;
     }
-    e.target.parentElement.nextElementSibling.classNameList.toggle(
+    e.target.parentElement.nextElementSibling.classList.toggle(
       "dropdown-active"
     );
   };
-  // -----checked login
+ // -----checked login
 
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const { isAuth, user } = useSelector((state) => state.auth);
-  useEffect(() => {
-    dispatch(isAuthentication());
-  }, [dispatch]);
+ const navigate = useNavigate();
+ const dispatch = useDispatch();
+ const { isAuth, user } = useSelector((state) => state.auth);
+ useEffect(() => {
+   dispatch(isAuthentication());
+ }, [dispatch]);
 
-  const handelOut = (evt) => {
-    evt.preventDefault();
-    dispatch(
-      Logout(() => {
-        navigate("/login");
-      })
-    );
-  };
+ const handelOut = (evt) => {
+   evt.preventDefault();
+   dispatch(
+     Logout(() => {
+       navigate("/login");
+     })
+   );
+ };
   return (
     <>
       <header id="header" className="fixed-top ">
@@ -248,4 +250,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Header;

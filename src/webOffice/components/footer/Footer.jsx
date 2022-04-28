@@ -111,7 +111,7 @@ function Footer(props) {
                 </ul>
               </div>
               <div className="col-lg-4 col-md-6 footer-newsletter">
-                <h4>Rejoignez notre alliances it</h4>
+                <h4>Rejoignez notre Multi-c</h4>
                 <p>
                   Bienvenue, votre participation est importante pour nous,
                   merci!
@@ -132,7 +132,7 @@ function Footer(props) {
         <div className="container">
           <div className="copyright">
             © droits d'auteur
-            <strong>Multi-ci</strong>. Tous les droits sont réservés
+            <strong>Multi-c</strong>. Tous les droits sont réservés
           </div>
           <div className="credits">
             Développeurs by{" "}

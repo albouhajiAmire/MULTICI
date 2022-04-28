@@ -256,14 +256,6 @@ function Contact() {
                 </div>
                 <div className="my-3">
                   <div className="loading">
-                    {stuff.loader && (
-                      <div className="loading">
-                        <div className="ring">
-                          Chargement...
-                          <span className="spn"></span>
-                        </div>
-                      </div>
-                    )}
                   </div>
                   <div className="error-message">
                     {stuff.errorMessage && (
@@ -278,7 +270,15 @@ function Contact() {
                   </div>
                 </div>
                 <div className="text-center">
-                  <button type="submit">Envoyer le message</button>
+                {!stuff.loading && <button type="submit">Envoyer le message</button>} 
+                {stuff.loader && (
+                      <div className="loading">
+                        <div className="ring">
+                        En cour de traitement ...
+                          <span className="spn"></span>
+                        </div>
+                      </div>
+                    )}
                 </div>
               </form>
             </div>

@@ -13,6 +13,7 @@ import Whyus from "../../components/whyUs/Whyus";
 import Featured from "../../components/featured/Featured";
 import MinHero from "../../components/hero/MinHero";
 import Navbar from "../../components/header/Navbar";
+import WhoAre from "../../components/who-are/WhoAre";
 function Home(props) {
   const socket = props.socket
   return (
@@ -26,7 +27,8 @@ function Home(props) {
       <MinHero />
       <Feature />
       <Featured />
-      <Count />
+      <WhoAre/>
+      {/* <Count /> */}
       <Service />
       <Testimonials />
       <Contact />

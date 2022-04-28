@@ -14,12 +14,14 @@ function FormEmpl() {
   const dispatch = useDispatch();
   const { isAuth, user } = useSelector((state) => state.auth);
   const [formData, setFormData] = useState({
-    type: "none",
+    // type: "none",
+    type: "",
     presentation: "",
     birthday: "",
     password: "",
     gender: "male",
-    certif: "none",
+    certif: "",
+    // certif: "none",
     cvId: "",
     userId: user._id,
   });
@@ -81,6 +83,7 @@ function FormEmpl() {
       });
   };
 
+  // --------------------UPLOAD FICHIER SVG PDF ... :
   const sendFile = (evt) => {
     if (evt.target.files && evt.target.files[0]) {
       const img = evt.target.files[0];
@@ -93,17 +96,17 @@ function FormEmpl() {
         .then(({ data }) => {
           if (!data.err) {
             setFormData({ ...formData, cvId: data.msg });
-            toast.success(" cv apload");
+            toast.success(" CV Télecharger");
             setFileName(img.name);
             setLoader(false);
           } else {
-            toast.error(" e err");
+            toast.error("Erreur!!CV n'est pas télecharger ,réessayer!");
             setLoader(false);
           }
         })
         .catch((err) => {
           console.log("get orders api err ", err);
-          toast.error(" eeeeeeerr");
+          toast.error("Ooooh !! Erreur");
           setLoader(false);
         });
     }
@@ -121,7 +124,7 @@ function FormEmpl() {
                 Postolez-vous à votre CV
               </span>
               <form id="stripe-login" onSubmit={validate}>
-                <div className="field padding-bottom--24">
+                {/* <div className="field padding-bottom--24">
                   <label className="labellogin" htmlFor="email">
                     Diplome (*):
                   </label>
@@ -136,9 +139,18 @@ function FormEmpl() {
                     <option value="none">sans déplome </option>
                     <option value="info">déplomer</option>
                   </select>
+                </div> */}
+                <div className="field padding-bottom--24">
+                  <label className="labellogin">Diplome (*):</label>
+                  <input
+                    type="text"
+                    name="certif"
+                    value={certif}
+                    onChange={(evt) => handleInputChange(evt)}
+                  />
                 </div>
                 <div className="field padding-bottom--24">
-                  <label className="labellogin" htmlFor="email">
+                  {/* <label className="labellogin" htmlFor="email">
                     D'emande d'emploi (*):
                   </label>
                   <select
@@ -152,13 +164,18 @@ function FormEmpl() {
                     <option value="stagepfe">Stage Pfe</option>
                     <option value="stagepre">Stage pré enbauche</option>
                     <option value="emploi"> Emploi</option>
-                  </select>
+                  </select> */}
+                  <label className="labellogin">D'emande d'emploi (*):</label>
+                  <input
+                    type="text"
+                    name="type"
+                    value={type}
+                    onChange={(evt) => handleInputChange(evt)}
+                  />
                 </div>
                 <div className="row">
                   <div className="field padding-bottom--24 col-md-12">
-                    <label className="labellogin" htmlFor="email">
-                      Date de naissance (*):
-                    </label>
+                    <label className="labellogin">Date de naissance (*):</label>
                     <input
                       type="date"
                       name="birthday"
@@ -184,6 +201,7 @@ function FormEmpl() {
                       type="file"
                       name="cvId"
                       onChange={(evt) => sendFile(evt)}
+                      accept=".png,.pdf ,.jpg,.jpeg"
                     />
                     <button>
                       <i className="fa-solid fa-folder-plus"></i>
@@ -191,7 +209,7 @@ function FormEmpl() {
                     </button>
                   </div>
                   <p className="main">Fichiers pris en charge</p>
-                  <p className="info">PDF, JPG, PNG</p>
+                  <p className="info">PDF, JPG, PNG ,JPEG</p>
                   <span>{fileName}</span>
                 </div>
                 <div className="field field-checkbox padding-bottom--24 flex-flex align-center">

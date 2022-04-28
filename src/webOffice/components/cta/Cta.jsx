@@ -11,7 +11,7 @@ function Cta() {
                 <em>Êtes-vous intéressé,</em> n'hésitez pas à nous contacter
               </h3>
               <p>
-                Les médias souhaitant s'engager avec MULTI-CI sont encouragés à
+                Les médias souhaitant s'engager avec MULTI-C sont encouragés à
                 contacter :
               </p>
               <a

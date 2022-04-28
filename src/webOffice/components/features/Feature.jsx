@@ -25,7 +25,7 @@ function Feature() {
                 data-bs-target="#tab-2"
               >
                 <i className="fa-solid fa-question iconfeatures"></i>
-                <h4>Comment postuler chez Multi-ci ?</h4>
+                <h4>Comment postuler chez Multi-c ?</h4>
               </a>
             </li>
             {/* End Tab 2 Nav */}

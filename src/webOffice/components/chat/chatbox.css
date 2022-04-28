@@ -28,6 +28,7 @@
   z-index: 998;
   overflow: hidden;
   background: #b03561;
+  /* margin-left: -60px; */
 }
 
 .chatbox .fab > i {

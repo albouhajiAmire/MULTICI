@@ -8,7 +8,6 @@ function ContactPage(props) {
   const socket = props.socket
   return (
     <>
-      <TopHeader />
       <Navbar />
       <section
         id="abouthero"
@@ -18,7 +17,7 @@ function ContactPage(props) {
         <h1>CONTACTEZ</h1>
         <h2>Parlons</h2>
         <span>Sélectionnez la raison de votre contact</span>
-        <a href="#about" className="btn-get-started scrollto">
+        <a href="#contacte" className="btn-get-started scrollto">
           <i className="fa-solid fa-angles-down"></i>
         </a>
       </section>
@@ -32,7 +31,7 @@ function ContactPage(props) {
           vous intéresser.
         </p>
       </section> */}
-      <Contact />
+        <Contact />
       <Footer  socket={socket}/>
     </>
   );

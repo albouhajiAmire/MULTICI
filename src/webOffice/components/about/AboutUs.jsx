@@ -6,13 +6,13 @@ function AboutUs() {
       <section id="aboutus" className="aboutus">
         <div className="container" data-aos="fade-up">
           <div className="row content">
-            <div className="col-lg-6">
-              <p>
-                  <img src="/img/map-monde.png" alt="" srcSet=""/>
-              </p>
+            <div className="col-lg-6 col-md-4">
+          
+                  <img src="/img/map-monde.png"  alt="" className="imgaboutsus"/>
+             
             </div>
-            <div className="col-lg-6 pt-4 pt-lg-0">
-              <h1>Qu'est-ce que Multici ?</h1>
+            <div className="col-lg-6  col-md-4 pt-4 pt-lg-0">
+              <h1>Qu'est-ce que Multi-c ?</h1>
               <p>
                 Le modèle flexible virtuel est une main-d'œuvre distribuée
                 d'agents indépendants hautement motivés qui sont déterminés à

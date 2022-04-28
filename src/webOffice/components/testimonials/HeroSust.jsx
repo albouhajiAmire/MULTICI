@@ -22,7 +22,7 @@ function HeroSust() {
                 <span>UNE INTERACTION BIENVEILLANTE À LA FOIS</span>
               </h2>
               <p className="animate__animated animate__fadeInUp">
-                Les valeurs et les initiatives qui ont amené MULTI-CI au premier
+                Les valeurs et les initiatives qui ont amené MULTI-C au premier
                 plan du service à la clientèle façonnent notre parcours pour
                 créer et soutenir un avenir équitable et durable pour notre
                 environnement, notre société, nos communautés et nos parties
@@ -32,7 +32,7 @@ function HeroSust() {
                 href
                 className="btn-get-started animate__animated animate__fadeInUp"
               >
-                Read More
+                Lire La suite
               </a>
             </div>
           </div>

@@ -186,14 +186,12 @@ const Login = () => {
               <div className="formbg">
                 <div className="formbg-inner padding-horizontal--48">
                   <span className="padding-bottom--15 spanlogin">
-                  <strong>Vous n'avez pas de compte ?</strong><br/>
-                  <NavLink to={"/login"}>S'inscrire</NavLink>
-                  
+                    <strong>Vous n'avez pas de compte ?</strong>
+                    <br />
+                    <NavLink to={"/login"}>S'inscrire</NavLink>
                   </span>
-                  {loading && <strong>loading...</strong>}
                   <div className="">
                     {errorMsg !== "" && <div className="err">{errorMsg}</div>}
-                    {loading && <div className="clock-loader"></div>}
                   </div>
 
                   <form
@@ -226,7 +224,9 @@ const Login = () => {
                           Mot de passe
                         </label>
                         <div className="reset-pass">
-                          <NavLink to={"/forgotpassword"}>Mot de passe oublié?</NavLink>
+                          <NavLink to={"/forgotpassword"}>
+                            Mot de passe oublié?
+                          </NavLink>
                         </div>
                       </div>
                       <input
@@ -238,7 +238,11 @@ const Login = () => {
                         }}
                         type={eye ? "text" : "password"}
                       />
-                      <button type="button" className="btnEye" onClick={toggleBtn}>
+                      <button
+                        type="button"
+                        className="btnEye"
+                        onClick={toggleBtn}
+                      >
                         {eye ? (
                           <i className="fa-solid fa-eye"></i>
                         ) : (
@@ -258,11 +262,15 @@ const Login = () => {
                       </label>
                     </div> */}
                     <div className="field padding-bottom--24">
-                      <input
-                        type="submit"
-                        name="submit"
-                        defaultValue="Continue"
-                      />
+                      {!loading && (
+                        <input
+                          type="submit"
+                          name="submit"
+                          value="se connecter"
+                          defaultValue="Continue"
+                        />
+                      )}
+                        {loading && <strong style={{textAlign:'center'}}> En cour de traitement...</strong>}
                     </div>
                     <div className="field">
                       <NavLink to={"/"} className="ssolink">

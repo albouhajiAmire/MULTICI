@@ -120,7 +120,7 @@ function Register() {
   };
   useEffect(() => {
     if (stuff.successMessage === "validate") {
-      toast.success("message succes");
+      toast.success("message success , Vous recervez un email pour activer votre compte...Merci.");
       setStuff({
         ...stuff,
         successMessage: "",
@@ -242,16 +242,6 @@ function Register() {
             </div>
             <div className="formbg-outer">
               <div className="formbg">
-                {stuff.loader && (
-                  <div className="box">
-                    <div className="container">
-                      <span className="circle"></span>
-                      <span className="circle"></span>
-                      <span className="circle"></span>
-                      <span className="circle"></span>
-                    </div>
-                  </div>
-                )}
                 {stuff.errorMessage && (
                   <div className="errorform">{stuff.errorMessage}</div>
                 )}
@@ -260,8 +250,9 @@ function Register() {
                 )}
                 <div className="formbg-inner padding-horizontal--48">
                   <span className="padding-bottom--15 spanlogin">
-                 <strong>Vous n'avez pas de compte ?</strong><br/>
-                  <NavLink to={"/login"}>Se connecter</NavLink>
+                    <strong>Vous n'avez pas de compte ?</strong>
+                    <br />
+                    <NavLink to={"/login"}>Se connecter</NavLink>
                   </span>
                   <form id="stripe-login" onSubmit={Signup}>
                     <div className="row">
@@ -367,11 +358,21 @@ function Register() {
                     </div>
 
                     <div className="field padding-bottom--24">
-                      <input
-                        type="submit"
-                        name="submit"
-                        defaultValue="Continue"
-                      />
+                      {!stuff.loader && (
+                        <input
+                          type="submit"
+                          name="submit"
+                          value="Créer votre compte"
+                          
+                          
+                        />
+                      )}
+                  
+                      {stuff.loader && (
+                        <strong style={{ textAlign: "center" }}>
+                          En cour de traitement ...
+                        </strong>
+                      )}
                     </div>
                     <div className="field">
                       <NavLink to={"/"} className="ssolink" href="#">

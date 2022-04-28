@@ -21,7 +21,7 @@ function Whyus() {
             </div>
             <div className="col-lg-7 d-flex flex-column justify-content-center align-items-stretch">
               <div className="content">
-                <h3>Qu'est-ce qui nous anime chez Multici ?</h3>
+                <h3>Qu'est-ce qui nous anime chez Multi-c ?</h3>
               </div>
               <div className="accordion-list">
                 <ul>

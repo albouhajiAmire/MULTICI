@@ -29,7 +29,7 @@ function Help(props) {
                     className="animate__animated animate__fadeInUp"
                     style={{ fontSize: "20px", fontWeight: "bolder" }}
                   >
-                    MULTIC investit dans des solutions holistiques et concrètes
+                    MULTI-C investit dans des solutions holistiques et concrètes
                     qui stimulent le retour sur investissement, l'engagement des
                     clients et la fidélité à la marque.
                   </p>
@@ -37,7 +37,7 @@ function Help(props) {
                     className="animate__animated animate__fadeInUp"
                     style={{ fontSize: "16px" }}
                   >
-                    MULTIC investit dans des solutions holistiques et concrètes
+                    MULTI-C investit dans des solutions holistiques et concrètes
                     qui stimulent le retour sur investissement, l'engagement des
                     clients et la fidélité à la marque.
                   </p>
