@@ -32,7 +32,7 @@ function Home(props) {
       <Service />
       <Testimonials />
       <Contact />
-      <Footer  socket={socket}/>
+      <Footer socket={socket}/>
     </>
   );
 }

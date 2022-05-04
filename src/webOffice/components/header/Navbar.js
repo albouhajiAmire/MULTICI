@@ -21,15 +21,14 @@ const Header = () => {
       "dropdown-active"
     );
   };
- // -----checked login
 
+ // -----checked login :
  const navigate = useNavigate();
  const dispatch = useDispatch();
  const { isAuth, user } = useSelector((state) => state.auth);
  useEffect(() => {
    dispatch(isAuthentication());
  }, [dispatch]);
-
  const handelOut = (evt) => {
    evt.preventDefault();
    dispatch(

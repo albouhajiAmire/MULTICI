@@ -30,7 +30,8 @@ const persistReducers = persistReducer(persistConfig , reducer)
 
 const initialState = {}
 
-const store = createStore(persistReducers , initialState , composeWithDevTools(applyMiddleware(...middlewares)))
+const store = createStore(persistReducers , initialState , composeWithDevTools(applyMiddleware(...middlewares)));
+
 const persist = persistStore(store)
 
 export default store ;

@@ -1,7 +1,7 @@
 
 import {LOGOUT , TOKEN , ME , ISAUTH} from "../constans/auth"
-import { START_LOADING, STOP_LOADING } from "../constans/loading"
-import {  LoginAuth, Me as LogMe} from "../../axios/service/auth"
+import {START_LOADING, STOP_LOADING } from "../constans/loading"
+import { LoginAuth, Me as LogMe} from "../../axios/service/auth"
 import { CLEAR_MESSAGE, SHOW_ERROR_MESSAGE } from "../constans/message"
 
 
@@ -30,9 +30,6 @@ const Auth = (formData) => async dispatch => {
         dispatch({ type: SHOW_ERROR_MESSAGE, payload : "Une erreur Veuillez réessayer" })
     })
 }
-
-
-
 
 
 const Me = (token) => async dispatch => {

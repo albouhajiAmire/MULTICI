@@ -19,7 +19,7 @@ const Login = () => {
   const toggleBtn = () => {
     SetEye((prevState) => !prevState);
   };
-  //END BTN Show && HIDE :
+  //END BTN Show && HIDE :::
   useEffect(() => {
     dispatch(isAuthentication());
   }, [dispatch]);
@@ -69,7 +69,6 @@ const Login = () => {
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
-
     for (const input in inputError) {
       if (inputError[input] !== "") {
         alert("still error");

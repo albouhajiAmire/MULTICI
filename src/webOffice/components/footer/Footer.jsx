@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 import { Subscribe } from "../../axios/service/subscribe";
 import ChatBox from "../chat/chatBox";
 function Footer(props) {
-  const socket = props.socket
+  const socket = props.socket;
   const [formData, setFormData] = useState({
     email: "",
   });
@@ -46,9 +46,9 @@ function Footer(props) {
                     2 Place Abou Baker Essadik APT8, Agdal.
                     <br />
                     <br />
-                    <strong>Phone:</strong> +212 537 682 496
+                    <strong>Tel:</strong> +212 537 682 496
                     <br />
-                    <strong>Email:</strong> rekrute.multic@gmail.com
+                    <strong>E-mail:</strong> rekrute.multic@gmail.com
                     <br />
                   </p>
                   <div className="social-links mt-3">
@@ -123,7 +123,10 @@ function Footer(props) {
                     value={email}
                     onChange={(e) => handleInputChange(e)}
                   />
-                  <input type="submit" defaultValue="Subscribe" />
+                  {/* <input type="submit" defaultValue="Subscribe" /> */}
+                  <div className="text-center">
+                    <button type="submit">Subscribe</button>
+                  </div>
                 </form>
               </div>
             </div>
@@ -142,7 +145,7 @@ function Footer(props) {
           </div>
         </div>
       </footer>
-  <ChatBox socket={socket}/>
+      <ChatBox socket={socket} />
       <a
         href="#hero"
         className="back-to-top d-flex align-items-center justify-content-center active"

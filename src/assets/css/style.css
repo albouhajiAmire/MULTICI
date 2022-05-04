@@ -1020,6 +1020,7 @@
   color: #fff;
   transition: 0.3s;
   border-radius: 0 4px 4px 0;
+  cursor:pointer
 }
 #footer .footer-top .footer-newsletter form input[type="submit"]:hover {
   background: #da4378;
