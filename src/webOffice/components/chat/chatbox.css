@@ -45,13 +45,13 @@
   position: fixed;
   right: 85px;
   bottom: 20px;
-  width: 400px;
+  width: 300px;
   font-size: 12px;
   line-height: 22px;
   font-family: "Roboto";
   font-weight: 500;
   -webkit-font-smoothing: antialiased;
-  opacity: 0;
+  display: none;
   box-shadow: 1px 1px 100px 2px rgba(0, 0, 0, 0.22);
   border-radius: 10px;
   -webkit-transition: all 0.2s ease-out;
@@ -79,11 +79,11 @@
   font-size: 20px;
   opacity: 0.5;
   /* padding: 20px; */
-  margin: -10px 10px;
+  margin: -10px 10px; 
 }
 
 .chatbox .chat.is-visible {
-  opacity: 1;
+  display: block;
   -webkit-animation: zoomIn 0.2s cubic-bezier(0.42, 0, 0.58, 1);
   animation: zoomIn 0.2s cubic-bezier(0.42, 0, 0.58, 1);
 }
@@ -284,6 +284,7 @@ a {
   float: left;
   background: rgba(0, 0, 0, 0.03);
   color: #666;
+  position: relative;
 }
 
 .chatbox .chat .chat_converse .chat_msg_item.chat_msg_item_user {
@@ -401,43 +402,64 @@ a {
     opacity: 1;
   }
 }
-/* SMARTPHONES PORTRAIT */
 
-@media only screen and (min-width: 300px) {
+/* SMARTPHONES LANDSCAPE */
+
+@media only screen and (max-width: 400px) {
   .chatbox .chat {
     width: 250px;
   }
+  .chatbox .chat_field {
+    width: 63%;
+  }
+  .chatbox .chat .chat_converse .chat_msg_item {
+    max-width: 90%;
+    margin: auto;
 }
-/* SMARTPHONES LANDSCAPE */
 
-@media only screen and (min-width: 480px) {
+.chatbox .chat .chat_converse .chat_msg_item.chat_msg_item_admin {
+  margin-left: 0px;
+  float: none;
+  text-align: center;
+  margin: auto;
+}
+
+.chatbox .chat_body p {
+  font-size: 12px;
+  padding: 2px;
+}
+
+}
+/* SMARTPHONES PORTRAIT */
+
+@media only screen and (max-width: 350px) {
   .chatbox .chat {
-    width: 300px;
+    width: 200px;
   }
   .chatbox .chat_field {
-    width: 65%;
+    width: 55%;
   }
 }
 /* TABLETS PORTRAIT */
 
-@media only screen and (min-width: 768px) {
+/* @media only screen and (min-width: 768px) {
   .chatbox .chat {
     width: 300px;
   }
   .chatbox .chat_field {
     width: 65%;
   }
-}
+} */
 /* TABLET LANDSCAPE / DESKTOP */
 
-@media only screen and (min-width: 14px) {
+/* @media only screen and (min-width: 14px) {
   .chatbox .chat {
     width: 300px;
   }
   .chatbox .chat_field {
     width: 65%;
   }
-}
+} */
 /*Color Options*/
 
 /* Ripple */

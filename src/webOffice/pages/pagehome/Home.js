@@ -18,20 +18,23 @@ function Home(props) {
   const socket = props.socket
   return (
     <>
+    
       <Navbar/>
       <Hero />
-      <AboutUs />
-      <WhatService />
-      <Whyus />
-      <Cta />
-      <MinHero />
-      <Feature />
-      <Featured />
-      <WhoAre/>
-      {/* <Count /> */}
-      <Service />
-      <Testimonials />
-      <Contact />
+      <div className="home-container">
+        <AboutUs />
+        <WhatService />
+        <Whyus />
+        <Cta />
+        <MinHero />
+        <Feature />
+        <Featured />
+        <WhoAre/>
+        {/* <Count /> */}
+        <Service />
+        <Testimonials />
+        <Contact />
+      </div>
       <Footer socket={socket}/>
     </>
   );

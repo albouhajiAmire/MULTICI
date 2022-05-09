@@ -15,7 +15,7 @@ const ChatBox = (props) => {
     fullname: "",
     email: "",
     phone: "",
-  });
+  }); 
   const [joinError, setJoinError] = useState("");
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
@@ -210,7 +210,7 @@ const ChatBox = (props) => {
           setLoading(false);
           toast.error("Oooh!!quelque chose s'est mal passé!!");
         });
-    }
+    } 
   };
 
   //Toggle chat and links
@@ -399,7 +399,12 @@ const ChatBox = (props) => {
                         />
                       </div>
                       {msg.msg}
+
+                     
                     </span>
+                    <span className="status left">
+                        {moment(msg.createdAt).fromNow()}
+                      </span>
                   </Fragment>
                 ) : (
                   <Fragment key={mi}>

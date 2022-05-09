@@ -162,8 +162,11 @@ function Contact() {
                   {stuff.successMessage && (
                     <div className="succes">{stuff.successMessage}</div>
                   )}
+
+</div>
+
                   <div className="row mt-3">
-                    <div className="col-md-12 form-group">
+                    <div className="col-md-12 form-group mt-3 mt-md-0">
                       <input
                         type="text"
                         name="firstname"
@@ -178,8 +181,10 @@ function Contact() {
                       )}
                     </div>
                   </div>
+
+
                   <div className="row mt-3">
-                    <div className="col-md-12 form-group ">
+                    <div className="col-md-12 form-group mt-3 mt-md-0">
                       <input
                         type="text"
                         name="lastname"
@@ -194,23 +199,28 @@ function Contact() {
                       )}
                     </div>
                   </div>
-                </div>
+
+
+              
+
                 <div className="row mt-3">
                   <div className="col-md-12 form-group mt-3 mt-md-0">
                     <input
-                      type="email"
-                      className="form-control"
-                      name="email"
-                      id="email"
-                      placeholder="E-mail"
-                      value={email}
-                      onChange={(e) => handleInputChange(e)}
+                       type="email"
+                       className="form-control"
+                       name="email"
+                       id="email"
+                       placeholder="E-mail"
+                       value={email}
+                       onChange={(e) => handleInputChange(e)}
                     />
-                    {inputError.email !== "" && (
+                   {inputError.email !== "" && (
                       <div className="error">{inputError.email}</div>
                     )}
                   </div>
-                </div>
+                </div> 
+              
+              
                 <div className="row mt-3">
                   <div className="col-md-12 form-group mt-3 mt-md-0">
                     <input
@@ -254,6 +264,8 @@ function Contact() {
                     <div className="error">{inputError.comment}</div>
                   )}
                 </div>
+             
+             
                 <div className="my-3">
                   <div className="loading">
                   </div>

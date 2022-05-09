@@ -45,3 +45,11 @@ section {
     font-family: "Poppins", sans-serif;
     color: #0f2f57;
   }
+
+  @media only screen and (max-width: 400px) {
+    .section-title p {
+      font-size: 20px;
+      font-weight: 500;
+    }
+  
+  }

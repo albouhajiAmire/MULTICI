@@ -123,10 +123,8 @@ function Footer(props) {
                     value={email}
                     onChange={(e) => handleInputChange(e)}
                   />
-                  {/* <input type="submit" defaultValue="Subscribe" /> */}
-                  <div className="text-center">
-                    <button type="submit">Subscribe</button>
-                  </div>
+                  <input type="submit" defaultValue="Subscribe" />
+                 
                 </form>
               </div>
             </div>

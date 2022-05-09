@@ -78,34 +78,27 @@ const Header = () => {
                             className="logotranslate"
                             alt="frensh"
                             src="img/france.png"
-                            style={{width:'20%'}}
                           />
                           Francais
                       
                       </li>
 
                       <li>
-                        <a href="#">
                           <img
                             className="logotranslate"
                             src="/img/morroco.png"
-                            style={{width:'20%'}}
                             alt="arabic"
                           />{" "}
                           Arabe
-                        </a>
                       </li>
 
                       <li>
-                        <a href="#">
                           <img
                             className="logotranslate"
                             src="/img/english.png"
-                            style={{width:'20%'}}
                             alt="english"
                           />
                           Anglais
-                        </a>
                       </li>
                     </ul>
                   </li>
@@ -191,39 +184,30 @@ const Header = () => {
                     </a>
                     <ul>
                       <li>
-                        <a href="#francais">
                           <img
                             className="logotranslate"
                             src="/img/france.png"
-                            style={{width:'20%'}}
                             alt="frensh"
                           />
                           Francais
-                        </a>
                       </li>
 
                       <li>
-                        <a href="#arabe">
                           <img
                             className="logotranslate"
                             src="/img/morroco.png"
-                            style={{width:'20%'}}
                             alt="arabic"
                           />{" "}
                           Arabe
-                        </a>
                       </li>
 
                       <li>
-                        <a href="#english">
                           <img
                             className="logotranslate"
                             src="/img/english.png"
-                            style={{width:'20%'}}
                             alt="english"
                           />
                           Anglais
-                        </a>
                       </li>
                     </ul>
                   </li>
