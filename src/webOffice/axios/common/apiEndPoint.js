@@ -2,7 +2,7 @@ const Host = {
   ROOT: "http://localhost:3000",
   BACKEND:
     !process.env.NODE_ENV || process.env.NODE_ENV === "development"
-      ? "https://backend-multic.herokuapp.com"
+      ? "http://localhost:3002"
       : "https://backend-multic.herokuapp.com",
   PREFIX: "/v1/api",
 };
@@ -30,6 +30,7 @@ const ApiEndpoints = {
     update: `/update`,
     image: `/image`,
     forgotPassword: `/forgot-password`,
+    resetPassword : `/reset-password`,
     count: `/count`,
     signup: `/signup`,
     confirmEmail: `/confirm-email`,

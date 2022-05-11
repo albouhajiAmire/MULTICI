@@ -1,4 +1,4 @@
-import {LOGOUT , TOKEN , ME , ISAUTH} from "../constans/auth"
+import {LOGOUT , TOKEN , ME , ISAUTH, ME_UPDATE_AVATAR} from "../constans/auth"
 import Jwt_decode from "jwt-decode"
 
 const INITIAL_STATE = {
@@ -18,6 +18,12 @@ const authReducer = (state = INITIAL_STATE , action) => {
         return {
             ...state ,
             user : action.payload ,
+            isAuth : true
+        } 
+        case ME_UPDATE_AVATAR : 
+        return {
+            ...state ,
+            user : {...state.user,image: action.payload} ,
             isAuth : true
         } 
         case LOGOUT : 

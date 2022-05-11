@@ -53,3 +53,8 @@ section {
     }
   
   }
+
+#root > div > section > div > div.col-xl-4 > div > div > img , 
+#profile-edit > form > div:nth-child(1) > div > img{
+  width: 20%;
+}

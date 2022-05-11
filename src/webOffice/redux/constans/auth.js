@@ -2,7 +2,8 @@ const LOGOUT = "LOGOUT"
 const TOKEN = "TOKEN"
 const ME = "ME"
 const ISAUTH = "ISAUTH"
+const ME_UPDATE_AVATAR = "ME_UPDATE_AVATAR"
 
 export {
-    LOGOUT , TOKEN , ME , ISAUTH
+    LOGOUT , TOKEN , ME , ISAUTH , ME_UPDATE_AVATAR
 }
